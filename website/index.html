@@ -1,0 +1,1565 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Studio Cromo - Comunicação estratégica para hotelaria e gastronomia. Fotografia, vídeo, assessoria e marketing de performance.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Studio Cromo - Comunicação Estratégica">
+  <meta property="og:description" content="Fotografia, vídeo e estratégia digital para hotelaria & gastronomia de luxo.">
+  <meta property="og:image" content="images/hero.avif">
+  <meta property="og:url" content="https://studiocromo.com">
+  <title>Studio Cromo - Comunicação Estratégica</title>
+
+  <link rel="preload" href="design-system/images/HOTEL/ABRACADABRA/Cópia de RBC04891-Editar.avif" as="image" fetchpriority="high">
+  <link rel="preload" href="design-system/images/HOTEL/ABRACADABRA/Cópia de RBC04668.avif" as="image" fetchpriority="high">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+    :root {
+      --black: #000000;
+      --white: #FFFFFF;
+      --gray: #888888;
+      --light-gray: #F5F5F5;
+      --border: rgba(0,0,0,0.08);
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+
+    .h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 800;
+      letter-spacing: -6px;
+      line-height: 0.82;
+      text-transform: uppercase;
+    }
+
+    .h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .h4 {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .body {
+      font-size: 1.0625rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    .eyebrow {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+    }
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .section {
+      padding: 5rem 0;
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
+    }
+
+    .section-border {
+      border-bottom: none;
+      content-visibility: auto;
+      contain-intrinsic-size: 1200px;
+    }
+    #solucoes.section {
+      padding: 8vh 0 14vh;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 2.5rem;
+      background: var(--border);
+    }
+
+    .solution-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+    }
+
+    .solution-num {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--gray);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .solution-card .h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .solution-card .body-sm {
+      color: var(--gray);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 4vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo-img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--white);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--white);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.5rem;
+      background: var(--white);
+      color: var(--black) !important;
+      font-weight: 600 !important;
+      border-radius: 0;
+    }
+    .nav-cta:hover {
+      background: rgba(255,255,255,0.8) !important;
+      color: var(--black) !important;
+    }
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+      padding: 0;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background: rgba(0,0,0,0.97);
+      z-index: 105;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .mobile-menu::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.03) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.02) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .mobile-link {
+      position: relative;
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s ease, letter-spacing 0.3s ease;
+      padding: 0.5rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .mobile-menu.open .mobile-link {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease, color 0.3s ease, letter-spacing 0.3s ease;
+    }
+    .mobile-menu.open .mobile-link:nth-child(1) { transition-delay: 0.05s; }
+    .mobile-menu.open .mobile-link:nth-child(2) { transition-delay: 0.1s; }
+    .mobile-menu.open .mobile-link:nth-child(3) { transition-delay: 0.15s; }
+    .mobile-menu.open .mobile-link:nth-child(4) { transition-delay: 0.2s; }
+    .mobile-link:hover {
+      color: var(--white);
+      letter-spacing: 8px;
+    }
+    .mobile-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background: var(--white);
+      transition: width 0.3s ease;
+    }
+    .mobile-link:hover::after {
+      width: 60%;
+    }
+    .mobile-cta {
+      padding: 1rem 3rem;
+      background: var(--white);
+      color: var(--black) !important;
+      font-weight: 600;
+      letter-spacing: 4px;
+      margin-top: 1.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .mobile-cta:hover {
+      background: rgba(255,255,255,0.85);
+      transform: scale(1.05);
+      letter-spacing: 4px;
+    }
+    .mobile-cta::after {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-bg-mobile { display: none; }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hero-bg-desktop { display: none; }
+      .hero-bg-mobile { display: block; }
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%);
+      }
+      .hero-bg {
+        object-position: left center;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 0 4vw;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2vw;
+      align-items: center;
+    }
+
+    .hero-left {
+      padding-top: 6vh;
+      padding-bottom: 2vh;
+    }
+
+    .hero-left .h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-left .h1 span {
+      display: block;
+    }
+
+    .hero-left .body {
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .hero-left .btn-outline {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .hero-left .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0.75rem;
+      padding-left: 3vw;
+      padding-top: 6vh;
+      padding-bottom: 2vh;
+    }
+
+    .hero-stat {
+      font-size: clamp(6rem, 13vw, 13rem);
+      font-weight: 900;
+      line-height: 0.75;
+      letter-spacing: -0.06em;
+      color: var(--white);
+      text-align: right;
+      display: block;
+    }
+
+    .hero-stat-suffix {
+      font-weight: 900;
+      font-size: 0.45em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .hero-stat-label {
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+      line-height: 1.7;
+      display: block;
+    }
+    .hero-stat-label em {
+      font-style: normal;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .about-grid .body { color: var(--black); line-height: 1.3; }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      min-height: 100vh;
+    }
+
+    .portfolio-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 15vh 4vw;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+    }
+
+    .portfolio-scroll {
+      padding: 10vh 4vw;
+      display: flex;
+      flex-direction: column;
+      gap: 8vh;
+    }
+
+    .case-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .case-img-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .case-img {
+      width: 100%;
+      height: 35vh;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .case-item:hover .case-img {
+      transform: scale(1.05);
+    }
+
+    .case-info .h3 {
+      margin-bottom: 0;
+    }
+    .case-sub {
+      font-size: 0.7rem;
+      color: var(--gray);
+      letter-spacing: 1px;
+    }
+    .case-info .body-sm {
+      margin-bottom: 0;
+    }
+
+    .methodology-grid {
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    .method-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 15vh 4vw;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+      z-index: 2;
+    }
+
+    .method-steps {
+      padding: 10vh 4vw;
+      display: flex;
+      flex-direction: column;
+      gap: 10vh;
+    }
+
+    .method-step {
+      padding-top: 2.5rem;
+    }
+
+    .method-num {
+      font-size: 3rem;
+      font-weight: 200;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .method-step .h3 {
+      margin-bottom: 1rem;
+    }
+
+    .stats-section {
+      background: var(--black);
+      padding: 6vh 0;
+      content-visibility: auto;
+      contain-intrinsic-size: 400px;
+    }
+
+    .stats-grid-alt {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: var(--white);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .stat-desc {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      font-weight: 300;
+    }
+
+    .clients-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 500px;
+      padding: 0;
+      overflow: hidden;
+      transform: skewY(-2deg);
+      margin: 0 0 8vh;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: var(--black);
+    }
+
+    .clients-header,
+    .stats-header {
+      padding: 10vh 4vw 6vh;
+      text-align: center;
+    }
+    .clients-header .eyebrow {
+      margin-bottom: 0.5rem;
+    }
+
+    .marquee {
+      display: flex;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 4vh 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      animation: marqueeScroll 30s linear infinite;
+      gap: 4rem;
+    }
+
+    .marquee-item {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      margin-right: 2rem;
+    }
+    .marquee-item:hover {
+      opacity: 1;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .cta-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 600px;
+      padding: 15vh 4vw;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .cta-heading .eyebrow {
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+    .cta-heading .h2 {
+      margin-bottom: 1rem;
+    }
+    .cta-heading .body {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      max-width: 400px;
+    }
+
+    .cta-heading .btn-outline {
+      margin-right: 0.75rem;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.7rem;
+      border-color: var(--border);
+      color: var(--black);
+    }
+    .cta-heading .btn-outline:hover {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .form-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.75rem 0;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-bottom-color: var(--black);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #ccc;
+      font-weight: 300;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-select {
+      appearance: none;
+      cursor: pointer;
+      color: var(--gray);
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23bbb'/%3E%3C/svg%3E") no-repeat right 0 center;
+      padding-right: 1.25rem;
+    }
+    .form-select:focus {
+      color: var(--black);
+    }
+    .form-select option {
+      color: var(--black);
+      background: var(--white);
+    }
+    .form-select.selected {
+      color: var(--black);
+    }
+    .form-submit {
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+    .form-success {
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .form-success-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .form-success .body {
+      line-height: 1.4;
+    }
+
+    .footer {
+      content-visibility: auto;
+      contain-intrinsic-size: 300px;
+      padding: 4vw;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand .logo {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col .h4 {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--gray);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover {
+      color: var(--black);
+    }
+
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .hero-left { padding-top: 5vh; padding-bottom: 4vh; }
+      .hero-right {
+        align-items: flex-start;
+        height: auto;
+        gap: 0;
+        border-left: none;
+        padding-left: 0;
+      }
+      .hero-stat {
+        font-size: clamp(4rem, 15vw, 8rem);
+        text-align: center;
+      }
+      .hero-stat-label { text-align: left; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .logo-img { height: 32px; }
+      nav { padding: 0.75rem 4vw; }
+      .hero { min-height: 100vh; align-items: flex-start; }
+      .section { padding: 60px 0; }
+      #solucoes.section { padding: 60px 0; }
+      .cta-section { padding: 60px 4vw 80px; }
+      .stats-header { padding: 60px 0 20px; }
+      .clients-header { padding: 60px 0 20px; }
+      .stats-section { padding: 40px 0 60px; }
+      .clients-section { margin: 0 0 60px; }
+      .portfolio-sticky { position: relative; height: auto; padding: 60px 4vw 20px; border-right: none; border-bottom: 1px solid var(--border); }
+      .portfolio-scroll { padding: 20px 4vw 60px; gap: 2.5vh; }
+      .method-sticky { position: relative; height: auto; padding: 60px 4vw 20px; border-right: none; border-bottom: 1px solid var(--border); }
+      .method-steps { padding: 20px 4vw 60px; gap: 1.25rem; }
+      .method-step { padding-top: 0; }
+
+      .hero-content { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-left {
+        padding-top: 14vh;
+        padding-bottom: 0;
+      }
+      .hero-left .h1 {
+        font-size: clamp(2.8rem, 10vw, 4.5rem);
+        letter-spacing: -2px;
+      }
+      .hero-left .h1 span[style*="font-weight:200"] {
+        font-weight: 400 !important;
+        font-size: 0.75em !important;
+      }
+      .hero-left .h1 span:nth-child(3),
+      .hero-left .h1 span:nth-child(4) {
+        font-size: 0.85em !important;
+      }
+      .hero-left .body {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-bottom: 1.25rem;
+      }
+      .hero-left > div[style*="display:flex"] {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .hero-left .btn {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 1.5rem;
+      }
+      .hero-right {
+        align-items: center;
+        border-left: none;
+        padding-left: 0;
+        padding-top: 26vh;
+        padding-bottom: 60px;
+      }
+      .hero-stat {
+        font-size: clamp(4rem, 18vw, 6rem);
+        text-align: center;
+        line-height: 0.8;
+      }
+      .hero-stat-label {
+        text-align: center;
+        font-size: clamp(0.75rem, 2vw, 0.95rem);
+        letter-spacing: 4px;
+      }
+
+      .about-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .about-image { height: 40vh; }
+
+      .solutions-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 0.5rem; }
+      .solution-card { padding: 0.75rem; }
+      .solution-card .h4 { margin-bottom: 0.25rem; }
+      .solution-num { margin-bottom: 0.5rem; }
+
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-sticky { position: relative; height: auto; padding: 60px 4vw 20px; border-right: none; border-bottom: 1px solid var(--border); }
+      .portfolio-scroll { padding: 20px 4vw 60px; gap: 2.5vh; }
+
+      .case-item { grid-template-columns: 1fr; gap: 1rem; }
+      .case-item:nth-child(even) .case-info { text-align: right; }
+      .case-img { height: 25vh; }
+
+      .methodology-grid { grid-template-columns: 1fr; }
+      .method-sticky { position: relative; height: auto; padding: 60px 4vw 20px; border-right: none; border-bottom: 1px solid var(--border); }
+      .method-steps { padding: 20px 4vw 60px; gap: 1.25rem; }
+      .method-step { padding-top: 0; }
+      .method-num { font-size: 1.5rem; margin-bottom: 0.5rem; }
+      .method-step .body { font-size: 0.875rem; line-height: 1.3; }
+
+      .stats-grid-alt { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
+
+      .cta-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-input, .form-textarea, .form-select { padding: 1rem 0; font-size: 1rem; }
+
+      .footer { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer-brand { grid-column: 1 / -1; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer .logo-img { height: 32px; }
+      .form-submit { align-self: center; }
+
+      .clients-section { transform: skewY(-3deg); }
+    }
+
+    @media (max-width: 480px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+      .solution-card { padding: 0.75rem; }
+      .stats-grid-alt { grid-template-columns: 1fr; }
+      .nav-cta { padding: 0.5rem 1rem; font-size: 0.65rem; }
+
+      .hero-left { padding-top: 14vh; }
+      .hero-left .h1 {
+        font-size: clamp(2.2rem, 12vw, 3.2rem);
+        letter-spacing: -1px;
+      }
+      .hero-left .h1 span[style*="font-weight:200"] {
+        font-size: 0.7em !important;
+      }
+      .hero-left .h1 span:nth-child(3),
+      .hero-left .h1 span:nth-child(4) {
+        font-size: 0.8em !important;
+      }
+      .hero-left .body {
+        font-size: 0.9375rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero-left .btn {
+        font-size: 0.75rem;
+        padding: 0.875rem 1rem;
+      }
+      .hero-stat {
+        font-size: clamp(3rem, 20vw, 4.5rem);
+      }
+      .hero-stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+      }
+      .hero-right {
+        padding-bottom: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo"><img src="images/logo-nav-white.avif" alt="Cromo" class="logo-img"></a>
+  <div class="nav-links">
+    <a href="#solucoes">Soluções</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contato" class="nav-cta">Contato</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#solucoes" class="mobile-link">Soluções</a>
+    <a href="#portfolio" class="mobile-link">Portfólio</a>
+    <a href="blog.html" class="mobile-link">Blog</a>
+    <a href="#contato" class="mobile-link mobile-cta">Contato</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <img src="design-system/images/HOTEL/ABRACADABRA/Cópia de RBC04891-Editar.avif" alt="Abracadabra - Hotelaria" class="hero-bg hero-bg-desktop" loading="eager" fetchpriority="high">
+  <img src="design-system/images/HOTEL/ABRACADABRA/Cópia de RBC04668.avif" alt="Abracadabra - Hotelaria" class="hero-bg hero-bg-mobile" loading="eager" fetchpriority="high">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1 class="h1">
+        <span style="font-weight:200;font-size:0.65em;color:rgba(255,255,255,0.25);">Comunicação</span>
+        <span style="font-weight:200;font-size:0.65em;color:rgba(255,255,255,0.25);">Estratégica para</span>
+        <span style="font-size:0.9em;">Hotelaria</span>
+        <span style="font-size:0.9em;">&amp; Gastronomia</span>
+      </h1>
+      <p class="body">Fotografia, vídeo, assessoria de imprensa e marketing de performance para marcas premium de hotelaria, gastronomia e lifestyle de luxo.</p>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="#contato" class="btn btn-primary">Começar Projeto</a>
+        <a href="#portfolio" class="btn btn-outline">Conhecer Cromo</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <span class="hero-stat">300<span class="hero-stat-suffix">+</span></span>
+      <span class="hero-stat-label">Hotéis & Restaurantes<br><em>atendidos desde 2019</em></span>
+    </div>
+  </div>
+</section>
+
+<div class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">Quem somos</span>
+        <h2 class="h2" style="margin-bottom:1.5rem;">Cromo<br>Comunicação</h2>
+        <p class="body" style="margin-bottom:1.5rem;">Somos uma agência de comunicação visual especializada em hotelaria, gastronomia e lifestyle de luxo. Combinamos fotografia, vídeo, assessoria de imprensa e marketing de performance para criar narrativas visuais que posicionam marcas premium no mercado.</p>
+        <p class="body">Com mais de 300 hotéis e restaurantes atendidos, desenvolvemos estratégias de conteúdo editorial que geram conexão, autoridade e resultado.</p>
+      </div>
+      <img src="images/renan-blaute.avif" alt="Renan Blaute - Diretor Criativo Studio Cromo" class="about-image" loading="lazy" decoding="async">
+    </div>
+  </div>
+</div>
+
+<div id="solucoes" class="section">
+  <div class="container">
+    <span class="eyebrow">O que fazemos</span>
+    <h2 class="h2">Soluções integradas para potencializar sua marca</h2>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <span class="solution-num">01</span>
+        <h4 class="h4">Fotografia</h4>
+        <p class="body-sm">Ensaios gastronômicos, arquitetura hoteleira, still e lifestyle com curadoria editorial.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-num">02</span>
+        <h4 class="h4">Vídeo</h4>
+        <p class="body-sm">Videografias institucionais, videomarketing para redes sociais e tours imersivos.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-num">03</span>
+        <h4 class="h4">Assessoria</h4>
+        <p class="body-sm">Assessoria de imprensa, relações públicas e posicionamento de marca no mercado.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-num">04</span>
+        <h4 class="h4">Otimização</h4>
+        <p class="body-sm">Estratégia digital, SEO, performance e gestão de conteúdo para multiplataforma.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="portfolio" class="section-border">
+  <div class="portfolio-grid">
+    <div class="portfolio-sticky">
+      <span class="eyebrow">Projetos</span>
+      <h2 class="h2" style="font-size: clamp(2.5rem, 5vw, 4rem);">Nosso<br>Portfólio</h2>
+      <p class="body-sm" style="margin: 1.5rem 0;">Casos selecionados que mostram o poder da comunicação visual estratégica.</p>
+      <a href="feed.html" class="btn btn-outline" style="padding: 0.75rem 2rem; font-size: 0.7rem; display: inline-flex; align-items: center; justify-content: center;">Ver Todos</a>
+    </div>
+    <div class="portfolio-scroll">
+      <a href="projeto-atelier-dos-sabores.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/GASTRONOMIA/ATELIER DOS SABORES/Cópia de RBC02912.avif" alt="Projeto Atelier dos Sabores - Gastronomia" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">ATELIER DOS SABORES</h3>
+          <p class="case-sub">@ abril 2025</p>
+        </div>
+      </a>
+      <a href="projeto-bam-bam.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/GASTRONOMIA/BAM BAM/Cópia de RBC05777.avif" alt="Projeto Bam Bam - Gastronomia" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">BAM BAM</h3>
+          <p class="case-sub">@ março 2025</p>
+        </div>
+      </a>
+      <a href="projeto-zendaya.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/HOTEL/ZENDAYA/Cópia de Cópia de CR_00392.avif" alt="Projeto Zendaya - Hotelaria" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">ZENDAYA</h3>
+          <p class="case-sub">@ junho 2024</p>
+        </div>
+      </a>
+      <a href="projeto-mamma-gorda.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/GASTRONOMIA/MAMMA GORDA/Cópia de RBC03860.avif" alt="Projeto Mamma Gorda - Gastronomia" class="case-img" loading="lazy" decoding="async" style="object-position:center bottom;">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">MAMMA GORDA</h3>
+          <p class="case-sub">@ janeiro 2025</p>
+        </div>
+      </a>
+      <a href="projeto-la-gare.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/GASTRONOMIA/LA GARE/Cópia de Cópia de Polvo à Velha Aldeia e Embarque(1).avif" alt="Projeto La Gare - Gastronomia" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">LA GARE</h3>
+          <p class="case-sub">@ dezembro 2024</p>
+        </div>
+      </a>
+
+      <a href="projeto-bar-do-ze.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/GASTRONOMIA/BAR DO ZÉ/Cópia de RB108501.avif" alt="Projeto Bar do Zé - Gastronomia" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">BAR DO ZÉ</h3>
+          <p class="case-sub">@ agosto 2024</p>
+        </div>
+      </a>
+      <a href="projeto-abracadabra.html" class="case-item reveal" style="text-decoration:none;color:inherit;">
+        <div class="case-img-wrapper">
+          <img src="design-system/images/HOTEL/ABRACADABRA/Cópia de DJI_0167.avif" alt="Projeto Abracadabra - Hotelaria" class="case-img" loading="lazy" decoding="async">
+        </div>
+        <div class="case-info">
+          <h3 class="h3">ABRACADABRA</h3>
+          <p class="case-sub">@ julho 2024</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="section stats-header">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow">Métricas</span>
+    <h2 class="h2" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Números que falam por si</h2>
+  </div>
+</div>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid-alt">
+      <div class="stat-item reveal">
+        <span class="stat-num">300+</span>
+        <p class="stat-desc">Hotéis & Restaurantes</p>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.15s;">
+        <span class="stat-num">50k-100k</span>
+        <p class="stat-desc">Audiência Qualificada</p>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.3s;">
+        <span class="stat-num">6</span>
+        <p class="stat-desc">Linhas Editoriais</p>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.45s;">
+        <span class="stat-num">100%</span>
+        <p class="stat-desc">Conteúdo Editorial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="methodology-grid">
+    <div class="method-sticky">
+      <span class="eyebrow">Como fazemos</span>
+      <h2 class="h2" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Metodologia</h2>
+      <p class="body-sm" style="margin-top:1rem;">Cinco passos para transformar sua marca em referência visual.</p>
+    </div>
+    <div class="method-steps">
+      <div class="method-step reveal">
+        <span class="method-num">/ 01</span>
+        <h3 class="h3">Briefing</h3>
+        <p class="body">Mapeamos objetivos, público-alvo e concorrência para alinhar expectativas.</p>
+      </div>
+      <div class="method-step reveal">
+        <span class="method-num">/ 02</span>
+        <h3 class="h3">Planejamento</h3>
+        <p class="body">Criamos um plano de conteúdo editorial com cronograma e entregas definidas.</p>
+      </div>
+      <div class="method-step reveal">
+        <span class="method-num">/ 03</span>
+        <h3 class="h3">Produção</h3>
+        <p class="body">Executamos fotografia, vídeo e criação de conteúdo com direção criativa.</p>
+      </div>
+      <div class="method-step reveal">
+        <span class="method-num">/ 04</span>
+        <h3 class="h3">Distribuição</h3>
+        <p class="body">Veiculamos o conteúdo nos canais certos para maximizar alcance e engajamento.</p>
+      </div>
+      <div class="method-step reveal">
+        <span class="method-num">/ 05</span>
+        <h3 class="h3">Otimização</h3>
+        <p class="body">Analisamos resultados e ajustamos a estratégia para melhoria contínua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section clients-header">
+  <div class="container">
+    <span class="eyebrow">Parceiros</span>
+    <h2 class="h2" style="font-size: clamp(1.8rem, 4vw, 3rem);">Marcas que confiam na Cromo</h2>
+  </div>
+</div>
+
+<div class="clients-section">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Bam Bam</span>
+      <span class="marquee-item">Esplanada</span>
+      <span class="marquee-item">Mamma Gorda</span>
+      <span class="marquee-item">La Gare</span>
+      <span class="marquee-item">Loire Bistro</span>
+      <span class="marquee-item">Kitchin</span>
+      <span class="marquee-item">Macaw</span>
+      <span class="marquee-item">Bar do Zé</span>
+      <span class="marquee-item">Abracadabra</span>
+      <span class="marquee-item">Zendaya</span>
+      <span class="marquee-item">Atelier dos Sabores</span>
+      <span class="marquee-item">Bam Bam</span>
+      <span class="marquee-item">Esplanada</span>
+      <span class="marquee-item">Mamma Gorda</span>
+      <span class="marquee-item">La Gare</span>
+      <span class="marquee-item">Loire Bistro</span>
+      <span class="marquee-item">Kitchin</span>
+      <span class="marquee-item">Macaw</span>
+      <span class="marquee-item">Bar do Zé</span>
+      <span class="marquee-item">Abracadabra</span>
+      <span class="marquee-item">Zendaya</span>
+      <span class="marquee-item">Atelier dos Sabores</span>
+    </div>
+  </div>
+</div>
+
+<section id="contato" class="cta-section">
+  <div class="cta-grid">
+    <div class="cta-heading">
+      <span class="eyebrow">Contato</span>
+      <h2 class="h2">Vamos conversar?</h2>
+      <p class="body">Conte-nos sobre seu projeto e descubra como podemos transformar sua comunicação visual.</p>
+      <div>
+        <a href="tel:+5521999999999" class="btn btn-outline">(21) 99999-9999</a>
+        <a href="mailto:ola@studiocromo.com" class="btn btn-outline">ola@studiocromo.com</a>
+        <a href="https://instagram.com/studiocromo" target="_blank" class="btn btn-outline">@studiocromo</a>
+      </div>
+    </div>
+    <div>
+      <form class="cta-form" id="ctaForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="nome">Nome</label>
+            <input type="text" id="nome" class="form-input" placeholder="Seu nome" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" class="form-input" placeholder="seu@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" class="form-input" placeholder="(21) 99999-9999">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="empresa">Empresa</label>
+            <input type="text" id="empresa" class="form-input" placeholder="Nome da empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="cargo">Cargo</label>
+            <input type="text" id="cargo" class="form-input" placeholder="Seu cargo">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="instagram">Instagram</label>
+            <input type="text" id="instagram" class="form-input" placeholder="@seudepartamento">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="categoria">Categoria</label>
+            <select id="categoria" class="form-select">
+              <option value="" disabled selected>Selecione</option>
+              <option value="hotelaria">Hotelaria</option>
+              <option value="gastronomia">Gastronomia</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="equipe">Equipe</label>
+            <select id="equipe" class="form-select">
+              <option value="" disabled selected>Selecione</option>
+              <option value="1-5">1 a 5 pessoas</option>
+              <option value="5-15">5 a 15 pessoas</option>
+              <option value="15-50">15 a 50 pessoas</option>
+              <option value="50+">Mais de 50 pessoas</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="projeto">Descreva seu projeto</label>
+          <textarea id="projeto" class="form-textarea" placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Enviar</button>
+      </form>
+      <div class="form-success" id="formSuccess" style="display:none;">
+        <div class="form-success-icon">&#10003;</div>
+        <p class="body">Recebemos sua mensagem!<br>Entraremos em contato em até 24h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <a href="#" class="logo"><img src="images/black-basic.avif" alt="Cromo" class="logo-img" style="height:40px;"></a>
+    <p class="body-sm" style="max-width:300px;">Fotografia, vídeo e estratégia digital para hotelaria, gastronomia & lifestyle de luxo.</p>
+  </div>
+  <div class="footer-col">
+    <h4 class="h4">Navegação</h4>
+    <a href="#about">Sobre</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <div class="footer-col">
+    <h4 class="h4">Redes</h4>
+    <a href="https://instagram.com/studiocromo" target="_blank">Instagram</a>
+    <a href="https://linkedin.com/company/studiocromo" target="_blank">LinkedIn</a>
+    <a href="https://youtube.com/@studiocromo" target="_blank">YouTube</a>
+    <a href="feed.html">Acervo</a>
+  </div>
+  <div class="footer-col">
+    <h4 class="h4">Contato</h4>
+    <a href="mailto:ola@studiocromo.com">ola@studiocromo.com</a>
+    <a href="tel:+5521999999999">(21) 99999-9999</a>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Studio Cromo. Todos os direitos reservados.</span>
+    <span>Rio de Janeiro &mdash; Brasil</span>
+  </div>
+</footer>
+
+<script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 100;
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+
+  const form = document.getElementById('ctaForm');
+  const success = document.getElementById('formSuccess');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      success.style.display = 'block';
+    });
+  }
+
+  const telInput = document.getElementById('whatsapp');
+  if (telInput) {
+    telInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      if (value.length > 6) {
+        value = '(' + value.slice(0, 2) + ') ' + value.slice(2, 7) + '-' + value.slice(7);
+      } else if (value.length > 2) {
+        value = '(' + value.slice(0, 2) + ') ' + value.slice(2);
+      } else if (value.length > 0) {
+        value = '(' + value;
+      }
+      e.target.value = value;
+    });
+  }
+
+  const selects = document.querySelectorAll('.form-select');
+  selects.forEach(sel => {
+    sel.addEventListener('change', function() {
+      if (this.value) this.classList.add('selected');
+      else this.classList.remove('selected');
+    });
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
+

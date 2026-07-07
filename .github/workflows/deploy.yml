@@ -1,0 +1,22 @@
+name: Deploy tema para HostGator
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wp-theme/cromo/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enviar via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: wp-theme/cromo/
+          server-dir: /wp-content/themes/cromo/

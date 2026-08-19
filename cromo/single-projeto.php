@@ -6,6 +6,19 @@
   $next = get_post_meta(get_the_ID(), '_cromo_next', true);
   $gallery = get_post_meta(get_the_ID(), '_cromo_gallery', true) ?: [];
   $location = get_post_meta(get_the_ID(), '_cromo_location', true);
+
+  // Fallback: handle simple array of image URLs (from WP gallery block)
+  if (!empty($gallery) && isset($gallery[0]) && is_string($gallery[0])) {
+    $simple = $gallery;
+    $gallery = [];
+    foreach ($simple as $url) {
+      $gallery[] = [
+        'layout' => 'full',
+        'img_1' => $url,
+        'class_1' => ''
+      ];
+    }
+  }
 ?>
 
 <section class="proj-hero">

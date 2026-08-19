@@ -55,6 +55,7 @@
 </div>
 
 <section id="portfolio" class="portfolio-fullscreen">
+  <span class="portfolio-label">Projetos</span>
   <div class="portfolio-carousel" id="portfolioCarousel">
     <?php
     $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DESC']);
@@ -84,7 +85,7 @@
       <div class="portfolio-counter">
         <span class="portfolio-current">01</span>
         <span class="portfolio-sep">/</span>
-        <span class="portfolio-total"><?php echo printf('%02d', $total); ?></span>
+        <span class="portfolio-total"><?php printf('%02d', $total); ?></span>
       </div>
       <button class="portfolio-nav-btn portfolio-next" id="portfolioNext">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>

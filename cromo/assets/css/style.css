@@ -724,6 +724,19 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
+.portfolio-label {
+  position: absolute;
+  top: 8rem;
+  right: 5vw;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 10;
+}
+
 .portfolio-carousel {
   position: relative;
   width: 100%;

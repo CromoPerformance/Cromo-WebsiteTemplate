@@ -12,7 +12,14 @@
   <img src="<?php echo esc_url($hero ?: get_template_directory_uri() . '/assets/images/hero.avif'); ?>" alt="<?php the_title_attribute(); ?>">
   <div class="proj-hero-overlay">
     <div class="proj-hero-content">
-      <?php if ($location): ?><span class="proj-hero-location"><?php echo esc_html($location); ?></span><?php endif; ?>
+      <?php if ($cat || $location): ?>
+        <span class="proj-hero-cat"><?php
+          $meta = [];
+          if ($cat) $meta[] = esc_html($cat);
+          if ($location) $meta[] = esc_html($location);
+          echo implode(' / ', $meta);
+        ?></span>
+      <?php endif; ?>
       <h1 class="proj-hero-title"><?php the_title(); ?></h1>
     </div>
   </div>

@@ -64,14 +64,15 @@
       $hero = get_post_meta($projeto->ID, '_cromo_hero', true);
       if (!$hero) $hero = get_the_post_thumbnail_url($projeto->ID, 'full');
       $cat  = get_post_meta($projeto->ID, '_cromo_cat', true);
+      $loc  = get_post_meta($projeto->ID, '_cromo_location', true);
     ?>
     <div class="portfolio-slide<?php echo $idx === 0 ? ' active' : ''; ?>" data-index="<?php echo $idx; ?>">
       <div class="portfolio-slide-bg" style="background-image:url('<?php echo esc_url($hero ?: get_template_directory_uri() . '/assets/images/hero.avif'); ?>')"></div>
       <div class="portfolio-slide-overlay"></div>
       <div class="portfolio-slide-content">
-        <span class="portfolio-slide-cat"><?php echo $cat ? esc_html($cat) : ''; ?></span>
+        <span class="portfolio-slide-cat"><?php echo $loc ? esc_html($loc) : ($cat ? esc_html($cat) : ''); ?></span>
         <h2 class="portfolio-slide-title"><?php echo esc_html($projeto->post_title); ?></h2>
-        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-outline btn-slide">Ver Projeto</a>
+        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-white btn-slide">Fale Conosco</a>
       </div>
     </div>
     <?php $idx++; endforeach; wp_reset_postdata(); ?>

@@ -168,6 +168,21 @@ img { display: block; max-width: 100%; }
 }
 .btn-outline:hover { background: var(--black); color: var(--white); }
 
+.btn-white {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  background: #fff;
+  color: var(--black);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-white:hover { background: transparent; color: #fff; }
+
 .section { padding: 5rem 0; content-visibility: auto; contain-intrinsic-size: 800px; }
 .section-border { border-bottom: none; content-visibility: auto; contain-intrinsic-size: 1200px; }
 #solucoes.section { padding: 8vh 0 14vh; }

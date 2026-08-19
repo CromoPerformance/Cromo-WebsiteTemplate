@@ -37,20 +37,50 @@
 
 <?php if (!empty($gallery)): ?>
 <div class="proj-gallery">
-  <?php foreach ($gallery as $row):
+  <?php foreach ($gallery as $idx => $row):
     $layout = $row['layout'] ?? 'full';
-    $classes = ['two_equal' => 'two-eq', 'two_wide_left' => 'two-wide-left', 'two_wide_right' => 'two-wide-right', 'three_equal' => 'three', 'full' => 'full'];
-    $row_class = $classes[$layout] ?? 'full';
-    $cols = $layout === 'full' ? 1 : ($layout === 'three_equal' ? 3 : 2);
+    $row_class = 'proj-row-' . $layout;
   ?>
   <div class="proj-row <?php echo esc_attr($row_class); ?>">
-    <?php for ($n = 1; $n <= $cols; $n++): ?>
-      <img src="<?php echo esc_url($row['img_' . $n] ?? ''); ?>"
-           alt="<?php the_title_attribute(); ?>"
-           class="<?php echo esc_attr($row['class_' . $n] ?? 'img-h'); ?>">
+    <?php
+    $cols = match($layout) {
+      'full' => 1,
+      'two_equal', 'two_wide_left', 'two_wide_right' => 2,
+      'three_equal' => 3,
+      default => 1
+    };
+    for ($n = 1; $n <= $cols; $n++):
+      $img = $row['img_' . $n] ?? '';
+      $cls = $row['class_' . $n] ?? '';
+    ?>
+      <?php if ($img): ?>
+        <img src="<?php echo esc_url($img); ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo esc_attr($cls); ?>">
+      <?php else: ?>
+        <div class="proj-placeholder <?php echo esc_attr($cls); ?>"></div>
+      <?php endif; ?>
     <?php endfor; ?>
   </div>
   <?php endforeach; ?>
+</div>
+<?php else: ?>
+<!-- Demo gallery with placeholders -->
+<div class="proj-gallery">
+  <div class="proj-row proj-row-two-wide-left">
+    <div class="proj-placeholder proj-placeholder-lg"></div>
+    <div class="proj-placeholder proj-placeholder-sm"></div>
+  </div>
+  <div class="proj-row proj-row-full">
+    <div class="proj-placeholder proj-placeholder-full"></div>
+  </div>
+  <div class="proj-row proj-row-three">
+    <div class="proj-placeholder"></div>
+    <div class="proj-placeholder"></div>
+    <div class="proj-placeholder"></div>
+  </div>
+  <div class="proj-row proj-row-two-wide-right">
+    <div class="proj-placeholder proj-placeholder-sm"></div>
+    <div class="proj-placeholder proj-placeholder-lg"></div>
+  </div>
 </div>
 <?php endif; ?>
 

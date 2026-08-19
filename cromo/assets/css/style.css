@@ -1495,25 +1495,21 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
   }
 
   .hub-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 8px;
   }
 
-  .hub-item-0,
-  .hub-item-1,
-  .hub-item-2,
-  .hub-item-3,
-  .hub-item-4 {
-    grid-column: span 1;
-  }
+  .hub-item-0 { grid-column: span 7; }
+  .hub-item-1 { grid-column: span 5; }
+  .hub-item-2 { grid-column: span 8; }
+  .hub-item-3 { grid-column: span 4; }
+  .hub-item-4 { grid-column: span 12; }
 
-  .hub-item-0 .hub-item-img,
-  .hub-item-1 .hub-item-img,
-  .hub-item-2 .hub-item-img,
-  .hub-item-3 .hub-item-img,
-  .hub-item-4 .hub-item-img {
-    aspect-ratio: 3/4;
-  }
+  .hub-item-0 .hub-item-img { aspect-ratio: 5/3; }
+  .hub-item-1 .hub-item-img { aspect-ratio: 3/4; }
+  .hub-item-2 .hub-item-img { aspect-ratio: 16/9; }
+  .hub-item-3 .hub-item-img { aspect-ratio: 3/4; }
+  .hub-item-4 .hub-item-img { aspect-ratio: 21/9; }
 
   .hub-item-overlay {
     opacity: 1;
@@ -1523,10 +1519,5 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 
   .hub-item-title {
     font-size: 1rem;
-  }
-
-  .hub-lightbox-close {
-    top: 1rem;
-    right: 1rem;
   }
 }

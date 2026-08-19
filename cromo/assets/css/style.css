@@ -829,10 +829,10 @@ img { display: block; max-width: 100%; }
   .hero-eyebrow { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 1rem; }
   .btn-hero { padding: 0.75rem 1.5rem; font-size: 0.6rem; letter-spacing: 2px; }
   .hero-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
-  .hero-metrics { grid-template-columns: 1fr; gap: 0.5rem; }
-  .hero-metric { padding: 1rem 0.75rem; }
-  .hero-metric-text { opacity: 1; transform: none; font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 300; letter-spacing: -1px; }
-  .hero-metric-num { font-size: clamp(1.25rem, 4vw, 2rem); }
+  .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: 0.25rem; }
+  .hero-metric { padding: 0.75rem 0.25rem; }
+  .hero-metric-text { opacity: 1; transform: none; font-size: 0.5rem; font-weight: 500; letter-spacing: 1px; line-height: 1.3; }
+  .hero-metric-num { font-size: clamp(1rem, 3vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════════════

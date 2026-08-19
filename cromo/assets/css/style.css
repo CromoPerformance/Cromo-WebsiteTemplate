@@ -1256,6 +1256,17 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 
 body.page-hub { background: var(--white); }
 
+/* White nav on hub page */
+body.page-hub .site-nav { background: var(--white); }
+body.page-hub .site-nav .nav-link { color: var(--black); }
+body.page-hub .site-nav .nav-link::after { background: var(--black); }
+body.page-hub .site-nav .logo-img { filter: none; }
+body.page-hub .site-nav .hamburger span { background: var(--black); }
+body.page-hub .site-nav .nav-cta { background: var(--black); color: var(--white) !important; border-color: var(--black); }
+body.page-hub .site-nav .nav-cta:hover { background: #333; border-color: #333; }
+body.page-hub .site-nav .lang-current { color: var(--black); border-color: rgba(0,0,0,0.15); }
+body.page-hub .site-nav .lang-option { color: var(--black); }
+
 .hub {
   min-height: 100vh;
   padding: 0;

@@ -7,35 +7,53 @@
   $gallery = get_post_meta(get_the_ID(), '_cromo_gallery', true) ?: [];
   $location = get_post_meta(get_the_ID(), '_cromo_location', true);
 
-  // Fallback: handle simple array of image URLs (from WP gallery block)
-  if (!empty($gallery) && isset($gallery[0]) && is_string($gallery[0])) {
-    $simple = $gallery;
-    $gallery = [];
-    foreach ($simple as $url) {
-      $gallery[] = [
-        'layout' => 'full',
-        'img_1' => $url,
-        'class_1' => ''
-      ];
+  // Normalize: extract flat array of image URLs regardless of format
+  $urls = [];
+  if (!empty($gallery)) {
+    if (isset($gallery[0]) && is_string($gallery[0])) {
+      $urls = $gallery;
+    } elseif (isset($gallery[0]) && is_array($gallery[0])) {
+      foreach ($gallery as $row) {
+        foreach ($row as $k => $v) {
+          if (strpos($k, 'img_') === 0 && !empty($v)) $urls[] = $v;
+        }
+      }
     }
   }
+  $urls = array_values(array_filter($urls));
 
   // Fallback: read gallery from WP Gallery block in post content
-  if (empty($gallery)) {
+  if (empty($urls)) {
     $content = get_the_content();
-    // Find wp-block-gallery sections and extract images from them
     if (preg_match_all('/<figure[^>]*class="[^"]*wp-block-gallery[^"]*"[^>]*>(.*?)<\/figure>/s', $content, $gallery_matches)) {
       foreach ($gallery_matches[1] as $gallery_html) {
         if (preg_match_all('/<img[^>]+src=["\']([^"\']+)["\']/', $gallery_html, $img_matches)) {
           foreach ($img_matches[1] as $url) {
-            $gallery[] = [
-              'layout' => 'full',
-              'img_1' => $url,
-              'class_1' => ''
-            ];
+            $urls[] = $url;
           }
         }
       }
+    }
+  }
+
+  // Build gallery rows: auto-assign layout patterns
+  $patterns = ['full', 'two_wide_left', 'full', 'three_equal', 'two_wide_right'];
+  $gallery_rows = [];
+  $ui = 0;
+  foreach ($urls as $idx => $url) {
+    $pattern = $patterns[$idx % count($patterns)];
+    if ($pattern === 'full') {
+      $gallery_rows[] = ['layout' => 'full', 'images' => [$url]];
+    } elseif ($pattern === 'two_wide_left' || $pattern === 'two_wide_right') {
+      $imgs = [$url];
+      if (isset($urls[$idx + 1])) { $imgs[] = $urls[$idx + 1]; $ui = $idx + 1; }
+      $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];
+    } elseif ($pattern === 'three_equal') {
+      $imgs = [$url];
+      if (isset($urls[$idx + 1])) $imgs[] = $urls[$idx + 1];
+      if (isset($urls[$idx + 2])) $imgs[] = $urls[$idx + 2];
+      $gallery_rows[] = ['layout' => 'three_equal', 'images' => $imgs];
+      if (isset($urls[$idx + 2])) $ui = $idx + 2;
     }
   }
 ?>
@@ -61,30 +79,16 @@
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
 </a>
 
-<?php if (!empty($gallery)): ?>
+<?php if (!empty($gallery_rows)): ?>
 <div class="proj-gallery">
-  <?php foreach ($gallery as $idx => $row):
-    $layout = $row['layout'] ?? 'full';
-    $row_class = 'proj-row-' . $layout;
+  <?php foreach ($gallery_rows as $row):
+    $layout = $row['layout'];
+    $imgs = $row['images'];
   ?>
-  <div class="proj-row <?php echo esc_attr($row_class); ?>">
-    <?php
-    $cols = match($layout) {
-      'full' => 1,
-      'two_equal', 'two_wide_left', 'two_wide_right' => 2,
-      'three_equal' => 3,
-      default => 1
-    };
-    for ($n = 1; $n <= $cols; $n++):
-      $img = $row['img_' . $n] ?? '';
-      $cls = $row['class_' . $n] ?? '';
-    ?>
-      <?php if ($img): ?>
-        <img src="<?php echo esc_url($img); ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo esc_attr($cls); ?>">
-      <?php else: ?>
-        <div class="proj-placeholder <?php echo esc_attr($cls); ?>"></div>
-      <?php endif; ?>
-    <?php endfor; ?>
+  <div class="proj-row proj-row-<?php echo esc_attr($layout); ?>">
+    <?php foreach ($imgs as $url): ?>
+      <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
+    <?php endforeach; ?>
   </div>
   <?php endforeach; ?>
 </div>

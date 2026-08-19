@@ -48,6 +48,7 @@ add_action('add_meta_boxes', function () {
     $cat  = get_post_meta($post->ID, '_cromo_cat', true);
     $year = get_post_meta($post->ID, '_cromo_year', true);
     $next = get_post_meta($post->ID, '_cromo_next', true);
+    $location = get_post_meta($post->ID, '_cromo_location', true);
     $gallery = get_post_meta($post->ID, '_cromo_gallery', true) ?: [];
     ?>
     <style>
@@ -55,16 +56,11 @@ add_action('add_meta_boxes', function () {
       .cromo-field label { display: block; font-weight: 600; margin-bottom: 4px; }
       .cromo-field input, .cromo-field select { width: 100%; }
       .cromo-field .cromo-desc { color: #666; font-size: 12px; margin-top: 2px; }
-      .gallery-row { background: #f6f7f7; border: 1px solid #ddd; padding: 12px; margin-bottom: 8px; border-radius: 3px; }
-      .gallery-row-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 600; }
-      .gallery-row-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-      .gallery-row-fields.three-col { grid-template-columns: 1fr 1fr 1fr; }
-      .gallery-row-fields.full-col { grid-template-columns: 1fr; }
-      .gallery-row-fields label { display: block; font-size: 11px; color: #666; margin-bottom: 2px; }
-      .gallery-row-fields input, .gallery-row-fields select { width: 100%; }
-      .gallery-row .remove-row { color: #b32d2e; cursor: pointer; font-size: 12px; }
-      .gallery-row .remove-row:hover { color: #d63638; }
-      .add-row-btn { margin-top: 8px; }
+      .gallery-images-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+      .gallery-thumb { position: relative; width: 120px; height: 80px; border-radius: 3px; overflow: hidden; border: 1px solid #ddd; }
+      .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .gallery-thumb .remove-img { position: absolute; top: 2px; right: 2px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; line-height: 18px; text-align: center; }
+      .gallery-thumb .remove-img:hover { background: #d63638; }
     </style>
     <?php wp_enqueue_media(); ?>
     <div class="cromo-field">
@@ -75,10 +71,14 @@ add_action('add_meta_boxes', function () {
       </div>
       <div class="cromo-desc">Imagem principal do topo da página do projeto</div>
     </div>
-    <div class="cromo-field" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="cromo-field" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
       <div>
         <label>Categoria</label>
         <input type="text" name="cromo_cat" value="<?php echo esc_attr($cat); ?>" placeholder="Hotel, Gastronomia...">
+      </div>
+      <div>
+        <label>Local</label>
+        <input type="text" name="cromo_location" value="<?php echo esc_attr($location); ?>" placeholder="São Paulo, RJ...">
       </div>
       <div>
         <label>Ano</label>
@@ -92,48 +92,32 @@ add_action('add_meta_boxes', function () {
     </div>
     <hr>
     <h4 style="margin:16px 0 8px;">Galeria</h4>
-    <div id="cromo-gallery-wrap">
-      <?php foreach ($gallery as $i => $row): $layout = $row['layout'] ?? 'full'; ?>
-      <div class="gallery-row" data-index="<?php echo $i; ?>">
-        <div class="gallery-row-head">
-          <span>Linha <?php echo $i + 1; ?></span>
-          <span class="remove-row" onclick="this.closest('.gallery-row').remove()">Remover</span>
+    <p style="color:#666;font-size:12px;margin-bottom:8px;">Adicione as imagens. Elas serão organizadas automaticamente no layout editorial.</p>
+    <div class="gallery-images-wrap" id="cromo-gallery-wrap">
+      <?php
+      // Support both old format (rows) and new format (flat array of URLs)
+      $urls = [];
+      if (!empty($gallery)) {
+        if (isset($gallery[0]) && is_string($gallery[0])) {
+          $urls = $gallery; // new flat format
+        } elseif (isset($gallery[0]) && is_array($gallery[0])) {
+          // old row format - extract URLs
+          foreach ($gallery as $row) {
+            foreach ($row as $k => $v) {
+              if (strpos($k, 'img_') === 0 && !empty($v)) $urls[] = $v;
+            }
+          }
+        }
+      }
+      foreach ($urls as $i => $url): ?>
+        <div class="gallery-thumb" data-url="<?php echo esc_attr($url); ?>">
+          <img src="<?php echo esc_url($url); ?>" alt="">
+          <button type="button" class="remove-img" onclick="this.parentElement.remove()">&times;</button>
         </div>
-        <div style="margin-bottom:8px;">
-          <select name="cromo_gallery[<?php echo $i; ?>][layout]" onchange="updateGalleryRow(this)">
-            <option value="full" <?php selected($layout, 'full'); ?>>1 Imagem (Full)</option>
-            <option value="two_equal" <?php selected($layout, 'two_equal'); ?>>2 Colunas Iguais</option>
-            <option value="two_wide_left" <?php selected($layout, 'two_wide_left'); ?>>2 Colunas (Esq. maior)</option>
-            <option value="two_wide_right" <?php selected($layout, 'two_wide_right'); ?>>2 Colunas (Dir. maior)</option>
-            <option value="three_equal" <?php selected($layout, 'three_equal'); ?>>3 Colunas Iguais</option>
-          </select>
-        </div>
-        <div class="gallery-row-fields <?php echo $layout === 'full' ? 'full-col' : ($layout === 'three_equal' ? 'three-col' : ''); ?>">
-          <?php for ($img = 1; $img <= 3; $img++):
-            $val = $row['img_' . $img] ?? '';
-            $cls = $row['class_' . $img] ?? 'img-h';
-            if ($layout === 'full' && $img > 1) continue;
-            if (in_array($layout, ['two_equal', 'two_wide_left', 'two_wide_right']) && $img > 2) continue;
-          ?>
-          <div>
-            <label>Imagem <?php echo $img; ?></label>
-            <div style="display:flex;gap:4px;">
-              <input type="text" name="cromo_gallery[<?php echo $i; ?>][img_<?php echo $img; ?>]" id="cromo_g_<?php echo $i; ?>_<?php echo $img; ?>" value="<?php echo esc_attr($val); ?>" placeholder="URL" style="flex:1;">
-              <button type="button" class="button" style="font-size:11px;padding:0 8px;min-height:28px;line-height:26px;" onclick="openMedia('cromo_g_<?php echo $i; ?>_<?php echo $img; ?>')">+</button>
-            </div>
-            <select name="cromo_gallery[<?php echo $i; ?>][class_<?php echo $img; ?>]" style="margin-top:4px;">
-              <option value="img-h" <?php selected($cls, 'img-h'); ?>>Horizontal (16:9)</option>
-              <option value="img-v" <?php selected($cls, 'img-v'); ?>>Vertical (3:4)</option>
-              <option value="img-sq" <?php selected($cls, 'img-sq'); ?>>Quadrado (1:1)</option>
-              <option value="img-tall" <?php selected($cls, 'img-tall'); ?>>Retrato (4:5)</option>
-            </select>
-          </div>
-          <?php endfor; ?>
-        </div>
-      </div>
       <?php endforeach; ?>
     </div>
-    <button type="button" class="button add-row-btn" onclick="addGalleryRow()">+ Adicionar Linha</button>
+    <input type="hidden" name="cromo_gallery_urls" id="cromo-gallery-urls" value="<?php echo esc_attr(implode("\n", $urls)); ?>">
+    <button type="button" class="button" onclick="openGalleryMedia()">+ Adicionar Imagens</button>
     <script>
       function openMedia(inputId) {
         var frame = wp.media({ title: 'Selecionar imagem', multiple: false, library: { type: 'image' } });
@@ -143,34 +127,33 @@ add_action('add_meta_boxes', function () {
         });
         frame.open();
       }
-      var galleryIndex = <?php echo count($gallery); ?>;
-      function addGalleryRow() {
-        var i = galleryIndex++;
-        var h = '<div class="gallery-row" data-index="'+i+'">';
-        h += '<div class="gallery-row-head"><span>Linha '+(i+1)+'</span><span class="remove-row" onclick="this.closest(\'.gallery-row\').remove()">Remover</span></div>';
-        h += '<div style="margin-bottom:8px;"><select name="cromo_gallery['+i+'][layout]" onchange="updateGalleryRow(this)">';
-        h += '<option value="full">1 Imagem (Full)</option><option value="two_equal">2 Colunas Iguais</option><option value="two_wide_left">2 Colunas (Esq. maior)</option><option value="two_wide_right">2 Colunas (Dir. maior)</option><option value="three_equal">3 Colunas Iguais</option>';
-        h += '</select></div>';
-        h += '<div class="gallery-row-fields full-col">';
-        h += '<div><label>Imagem 1</label><div style="display:flex;gap:4px;"><input type="text" name="cromo_gallery['+i+'][img_1]" id="cromo_g_'+i+'_1" placeholder="URL" style="flex:1;"><button type="button" class="button" style="font-size:11px;padding:0 8px;min-height:28px;line-height:26px;" onclick="openMedia(\'cromo_g_'+i+'_1\')">+</button></div><select name="cromo_gallery['+i+'][class_1]" style="margin-top:4px;"><option value="img-h">Horizontal (16:9)</option><option value="img-v">Vertical (3:4)</option><option value="img-sq">Quadrado (1:1)</option><option value="img-tall">Retrato (4:5)</option></select></div>';
-        h += '</div></div>';
-        document.getElementById('cromo-gallery-wrap').insertAdjacentHTML('beforeend', h);
+      function openGalleryMedia() {
+        var frame = wp.media({ title: 'Selecionar imagens', multiple: true, library: { type: 'image' } });
+        frame.on('select', function() {
+          var selection = frame.state().get('selection');
+          var wrap = document.getElementById('cromo-gallery-wrap');
+          var urlsInput = document.getElementById('cromo-gallery-urls');
+          var currentUrls = urlsInput.value ? urlsInput.value.split('\n') : [];
+          selection.each(function(attachment) {
+            var url = attachment.toJSON().url;
+            currentUrls.push(url);
+            var div = document.createElement('div');
+            div.className = 'gallery-thumb';
+            div.dataset.url = url;
+            div.innerHTML = '<img src="' + url + '" alt=""><button type="button" class="remove-img" onclick="this.parentElement.remove()">&times;</button>';
+            wrap.appendChild(div);
+          });
+          urlsInput.value = currentUrls.join('\n');
+        });
+        frame.open();
       }
-      function updateGalleryRow(sel) {
-        var row = sel.closest('.gallery-row');
-        var fields = row.querySelector('.gallery-row-fields');
-        var layout = sel.value;
-        var cols = layout === 'full' ? 1 : (layout === 'three_equal' ? 3 : 2);
-        var currentInputs = fields.querySelectorAll('div');
-        if (currentInputs.length === cols) return;
-        var i = parseInt(row.dataset.index);
-        var h = '';
-        for (var n = 1; n <= cols; n++) {
-          h += '<div><label>Imagem '+n+'</label><div style="display:flex;gap:4px;"><input type="text" name="cromo_gallery['+i+'][img_'+n+']" id="cromo_g_'+i+'_'+n+'" placeholder="URL" style="flex:1;"><button type="button" class="button" style="font-size:11px;padding:0 8px;min-height:28px;line-height:26px;" onclick="openMedia(\'cromo_g_'+i+'_'+n+'\')">+</button></div><select name="cromo_gallery['+i+'][class_'+n+']" style="margin-top:4px;"><option value="img-h">Horizontal (16:9)</option><option value="img-v">Vertical (3:4)</option><option value="img-sq">Quadrado (1:1)</option><option value="img-tall">Retrato (4:5)</option></select></div>';
-        }
-        fields.className = 'gallery-row-fields' + (layout === 'full' ? ' full-col' : '') + (layout === 'three_equal' ? ' three-col' : '');
-        fields.innerHTML = h;
-      }
+      // Sync hidden input before submit
+      document.querySelector('form').addEventListener('submit', function() {
+        var thumbs = document.querySelectorAll('.gallery-thumb');
+        var urls = [];
+        thumbs.forEach(function(t) { if (t.dataset.url) urls.push(t.dataset.url); });
+        document.getElementById('cromo-gallery-urls').value = urls.join('\n');
+      });
     </script>
     <?php
   }, 'projeto', 'normal', 'high');
@@ -181,7 +164,7 @@ add_action('save_post', function ($post_id) {
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
   if (!current_user_can('edit_post', $post_id)) return;
 
-  $fields = ['cromo_hero', 'cromo_cat', 'cromo_year'];
+  $fields = ['cromo_hero', 'cromo_cat', 'cromo_year', 'cromo_location'];
   foreach ($fields as $f) {
     if (isset($_POST[$f])) update_post_meta($post_id, '_' . $f, sanitize_text_field($_POST[$f]));
   }
@@ -190,18 +173,12 @@ add_action('save_post', function ($post_id) {
     update_post_meta($post_id, '_cromo_next', intval($_POST['cromo_next']));
   }
 
-  if (isset($_POST['cromo_gallery']) && is_array($_POST['cromo_gallery'])) {
-    $clean = [];
-    foreach ($_POST['cromo_gallery'] as $row) {
-      $r = ['layout' => sanitize_text_field($row['layout'] ?? 'full')];
-      $cols = $r['layout'] === 'full' ? 1 : ($r['layout'] === 'three_equal' ? 3 : 2);
-      for ($n = 1; $n <= $cols; $n++) {
-        $r['img_' . $n] = esc_url_raw($row['img_' . $n] ?? '');
-        $r['class_' . $n] = sanitize_text_field($row['class_' . $n] ?? 'img-h');
-      }
-      $clean[] = $r;
-    }
-    update_post_meta($post_id, '_cromo_gallery', $clean);
+  // Save gallery as flat array of URLs
+  if (isset($_POST['cromo_gallery_urls']) && trim($_POST['cromo_gallery_urls']) !== '') {
+    $raw = sanitize_textarea_field($_POST['cromo_gallery_urls']);
+    $urls = array_filter(array_map('trim', explode("\n", $raw)));
+    $urls = array_map('esc_url_raw', $urls);
+    update_post_meta($post_id, '_cromo_gallery', array_values($urls));
   } else {
     delete_post_meta($post_id, '_cromo_gallery');
   }

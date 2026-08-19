@@ -334,7 +334,11 @@
   function animateCounters() {
     document.querySelectorAll('.hero-metric-num').forEach(function(el) {
       if (el.dataset.animated) return;
-      if (!el.dataset.target) { el.dataset.animated = '1'; return; }
+      if (!el.dataset.target) {
+        el.classList.add('hero-metric-visible');
+        el.dataset.animated = '1';
+        return;
+      }
       el.dataset.animated = '1';
       var target = parseInt(el.dataset.target, 10);
       var suffix = el.dataset.suffix || '';

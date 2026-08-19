@@ -66,7 +66,7 @@
 </div>
 
 <section id="portfolio" class="portfolio-fullscreen">
-  <span class="portfolio-label">Projetos</span>
+  <a href="<?php echo esc_url(home_url('/projetos')); ?>" class="portfolio-label">Projetos</a>
   <div class="portfolio-carousel" id="portfolioCarousel">
     <?php
     $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DESC']);

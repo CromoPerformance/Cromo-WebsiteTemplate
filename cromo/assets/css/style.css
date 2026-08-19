@@ -1294,7 +1294,7 @@ body.page-hub { background: var(--white); }
 
 .hub-title {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(4rem, 12vw, 9rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -1px;
@@ -1320,17 +1320,16 @@ body.page-hub { background: var(--white); }
 }
 
 /* Grid patterns - asymmetric editorial layout */
-.hub-item-0 { grid-column: span 7; }
-.hub-item-1 { grid-column: span 5; }
-.hub-item-2 { grid-column: span 4; }
-.hub-item-3 { grid-column: span 8; }
-.hub-item-4 { grid-column: span 6; }
+.hub-item-0 { grid-column: span 8; }
+.hub-item-1 { grid-column: span 4; }
+.hub-item-2 { grid-column: span 5; }
+.hub-item-3 { grid-column: span 7; }
+.hub-item-4 { grid-column: span 5; }
 
 /* Grid items */
 .hub-item {
   position: relative;
   display: block;
-  border-radius: 8px;
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
@@ -1356,11 +1355,11 @@ body.page-hub { background: var(--white); }
 }
 
 /* Aspect ratios for variety */
-.hub-item-0 .hub-item-img { aspect-ratio: 4/3; }
+.hub-item-0 .hub-item-img { aspect-ratio: 16/10; }
 .hub-item-1 .hub-item-img { aspect-ratio: 3/4; }
-.hub-item-2 .hub-item-img { aspect-ratio: 1/1; }
-.hub-item-3 .hub-item-img { aspect-ratio: 16/9; }
-.hub-item-4 .hub-item-img { aspect-ratio: 3/2; }
+.hub-item-2 .hub-item-img { aspect-ratio: 4/5; }
+.hub-item-3 .hub-item-img { aspect-ratio: 3/2; }
+.hub-item-4 .hub-item-img { aspect-ratio: 1/1; }
 
 /* Overlay */
 .hub-item-overlay {

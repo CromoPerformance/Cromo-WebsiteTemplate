@@ -11,7 +11,6 @@ $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => -1, 'orderb
   <div class="hub-container">
     <header class="hub-header">
       <div class="hub-intro">
-        <span class="hub-label">Portfólio</span>
         <div class="hub-intro-text">
           <h1 class="hub-title">Projetos</h1>
           <p class="hub-desc">Fotografia, vídeo e estratégia visual para hotelaria e gastronomia.</p>

@@ -106,4 +106,78 @@
   } else {
     animateCounters();
   }
+
+  /* ═══════════════════════════════════════════
+     PORTFOLIO FULLSCREEN CAROUSEL
+     ═══════════════════════════════════════════ */
+  var carousel = document.getElementById('portfolioCarousel');
+  if (carousel) {
+    var slides = carousel.querySelectorAll('.portfolio-slide');
+    var dots = carousel.querySelectorAll('.portfolio-dot');
+    var currentEl = carousel.querySelector('.portfolio-current');
+    var prevBtn = document.getElementById('portfolioPrev');
+    var nextBtn = document.getElementById('portfolioNext');
+    var current = 0;
+    var total = slides.length;
+    var autoplayTimer;
+
+    function goTo(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(next, 5000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { prev(); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { next(); startAutoplay(); });
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        goTo(parseInt(this.dataset.index, 10));
+        startAutoplay();
+      });
+    });
+
+    /* Keyboard navigation */
+    document.addEventListener('keydown', function(e) {
+      if (!carousel.getBoundingClientRect) return;
+      var rect = carousel.getBoundingClientRect();
+      if (rect.top > window.innerHeight || rect.bottom < 0) return;
+      if (e.key === 'ArrowLeft') { prev(); startAutoplay(); }
+      if (e.key === 'ArrowRight') { next(); startAutoplay(); }
+    });
+
+    /* Touch swipe */
+    var touchStartX = 0;
+    carousel.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      stopAutoplay();
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function(e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? next() : prev();
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    startAutoplay();
+  }
 })();

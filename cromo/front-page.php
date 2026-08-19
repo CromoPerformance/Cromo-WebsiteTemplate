@@ -54,39 +54,46 @@
   </div>
 </div>
 
-<section id="portfolio" class="section-border">
-  <div class="portfolio-grid">
-    <div class="portfolio-sticky">
-      <span class="eyebrow"><?php echo esc_html(cromo_get('port_eyebrow', 'Projetos')); ?></span>
-      <h2 class="h2" style="font-size: clamp(2.5rem, 5vw, 4rem);">
-        <?php echo nl2br(esc_html(cromo_get('port_title', "Nosso\nPortfólio"))); ?>
-      </h2>
-      <p class="body-sm" style="margin: 1.5rem 0;">
-        <?php echo esc_html(cromo_get('port_desc', 'Casos selecionados que mostram o poder da comunicação visual estratégica.')); ?>
-      </p>
-      <a href="<?php echo esc_url(home_url('/projeto')); ?>" class="btn btn-outline" style="padding: 0.75rem 2rem; font-size: 0.7rem; display: inline-flex; align-items: center; justify-content: center;">
-        <?php echo esc_html(cromo_get('port_btn', 'Ver Todos')); ?>
-      </a>
+<section id="portfolio" class="portfolio-fullscreen">
+  <div class="portfolio-carousel" id="portfolioCarousel">
+    <?php
+    $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DESC']);
+    $total = count($projetos);
+    $idx = 0;
+    foreach ($projetos as $projeto):
+      $hero = get_post_meta($projeto->ID, '_cromo_hero', true);
+      if (!$hero) $hero = get_the_post_thumbnail_url($projeto->ID, 'full');
+      $cat  = get_post_meta($projeto->ID, '_cromo_cat', true);
+    ?>
+    <div class="portfolio-slide<?php echo $idx === 0 ? ' active' : ''; ?>" data-index="<?php echo $idx; ?>">
+      <div class="portfolio-slide-bg" style="background-image:url('<?php echo esc_url($hero ?: get_template_directory_uri() . '/assets/images/hero.avif'); ?>')"></div>
+      <div class="portfolio-slide-overlay"></div>
+      <div class="portfolio-slide-content">
+        <span class="portfolio-slide-cat"><?php echo $cat ? esc_html($cat) : ''; ?></span>
+        <h2 class="portfolio-slide-title"><?php echo esc_html($projeto->post_title); ?></h2>
+        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-outline btn-slide">Ver Projeto</a>
+      </div>
     </div>
-    <div class="portfolio-scroll">
-      <?php
-      $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => 6, 'orderby' => 'date', 'order' => 'DESC']);
-      foreach ($projetos as $projeto):
-        $hero = get_post_meta($projeto->ID, '_cromo_hero', true);
-        if (!$hero) $hero = get_the_post_thumbnail_url($projeto->ID, 'full');
-        $cat  = get_post_meta($projeto->ID, '_cromo_cat', true);
-      ?>
-      <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="case-item reveal" style="text-decoration:none;color:inherit;">
-        <div class="case-img-wrapper">
-          <img src="<?php echo esc_url($hero ?: get_template_directory_uri() . '/assets/images/hero.avif'); ?>"
-               alt="<?php echo esc_attr($projeto->post_title); ?>" class="case-img" loading="lazy" decoding="async">
-        </div>
-        <div class="case-info">
-          <h3 class="h3"><?php echo esc_html($projeto->post_title); ?></h3>
-          <p class="case-sub"><?php echo $cat ? '@ ' . esc_html($cat) : ''; ?></p>
-        </div>
-      </a>
-      <?php endforeach; wp_reset_postdata(); ?>
+    <?php $idx++; endforeach; wp_reset_postdata(); ?>
+
+    <div class="portfolio-nav">
+      <button class="portfolio-nav-btn portfolio-prev" id="portfolioPrev">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="portfolio-counter">
+        <span class="portfolio-current">01</span>
+        <span class="portfolio-sep">/</span>
+        <span class="portfolio-total"><?php echo printf('%02d', $total); ?></span>
+      </div>
+      <button class="portfolio-nav-btn portfolio-next" id="portfolioNext">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="portfolio-dots" id="portfolioDots">
+      <?php for ($i = 0; $i < $total; $i++): ?>
+        <button class="portfolio-dot<?php echo $i === 0 ? ' active' : ''; ?>" data-index="<?php echo $i; ?>"></button>
+      <?php endfor; ?>
     </div>
   </div>
 </section>

@@ -1480,6 +1480,7 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 
   .hub-header {
     margin-bottom: 2.5rem;
+    padding-left: 5vw;
   }
 
   .hub-intro-text {
@@ -1515,7 +1516,11 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
   .hub-item-3 .hub-item-img,
   .hub-item-4 .hub-item-img {
     aspect-ratio: 16/9;
-    max-height: 180px;
+    max-height: 230px;
+  }
+
+  .hub-item {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
 
   .hub-item-overlay {

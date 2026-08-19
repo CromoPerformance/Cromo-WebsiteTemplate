@@ -56,7 +56,6 @@
       if (isset($urls[$idx + 2])) $ui = $idx + 2;
     }
   }
-  }
 ?>
 
 <section class="proj-hero">

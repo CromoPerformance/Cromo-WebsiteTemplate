@@ -27,6 +27,7 @@
     <span></span>
   </button>
   <div class="mobile-menu" id="mobileMenu">
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="mobile-menu-logo" style="filter: invert(1);">
     <a href="<?php echo esc_url(home_url('/#about')); ?>" class="mobile-link">Sobre</a>
     <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="mobile-link">Projetos</a>
     <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link">Soluções</a>

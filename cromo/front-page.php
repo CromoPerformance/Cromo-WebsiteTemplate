@@ -98,7 +98,7 @@
       <?php endfor; ?>
     </div>
   </div>
-</div>
+</section>
 
 <div id="solucoes" class="section solucoes-bg">
   <div class="container">

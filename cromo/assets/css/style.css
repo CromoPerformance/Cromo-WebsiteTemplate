@@ -829,7 +829,7 @@ img { display: block; max-width: 100%; }
   .hero-eyebrow { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 1rem; }
   .btn-hero { padding: 0.75rem 1.5rem; font-size: 0.6rem; letter-spacing: 2px; }
   .hero-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
-  .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: 0; bottom: 70px; }
+  .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: 0; bottom: 40px; }
   .hero-metric { padding: 1rem 0.25rem; }
   .hero { margin-bottom: 3rem; }
   .about-btn { width: 100%; text-align: center; }

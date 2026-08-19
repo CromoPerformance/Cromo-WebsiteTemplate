@@ -422,7 +422,7 @@ img { display: block; max-width: 100%; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1.8fr;
   gap: 4vw;
   align-items: center;
 }

@@ -2,7 +2,7 @@
 
 <section class="hero" id="hero">
   <video class="hero-video" autoplay muted playsinline preload="auto" id="heroVideo">
-    <source src="<?php echo esc_url(get_template_directory_uri() . '/assets/videos/STUDIO CROMO - RESTAURANTE_V2.mov'); ?>" type="video/quicktime">
+    <source src="<?php echo esc_url(get_template_directory_uri() . '/assets/videos/STUDIO CROMO - RESTAURANTE_V2.mov'); ?>" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
 

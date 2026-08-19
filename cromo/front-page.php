@@ -36,20 +36,26 @@
 <div class="section" id="about">
   <div class="container">
     <div class="about-grid">
-      <div>
+      <div class="about-content">
         <span class="eyebrow"><?php echo esc_html(cromo_get('about_eyebrow', 'Quem somos')); ?></span>
-        <h2 class="h2" style="margin-bottom:1.5rem;">
+        <h2 class="h2 about-title">
           <?php echo nl2br(esc_html(cromo_get('about_title', "Cromo\nComunicação"))); ?>
         </h2>
+        <p class="about-subtitle">
+          <?php echo esc_html(cromo_get('about_subtitle', 'Comunicação visual estratégica para hotelaria, gastronomia & lifestyle de luxo.')); ?>
+        </p>
         <?php if (cromo_get('about_desc1')): ?>
           <p class="body" style="margin-bottom:1.5rem;"><?php echo esc_html(cromo_get('about_desc1')); ?></p>
         <?php endif; ?>
         <?php if (cromo_get('about_desc2')): ?>
           <p class="body"><?php echo esc_html(cromo_get('about_desc2')); ?></p>
         <?php endif; ?>
+        <a href="#contato" class="btn btn-outline about-btn">Conheça a Cromo</a>
       </div>
-      <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
-           alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
+      <div class="about-image-wrapper">
+        <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
+             alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
+      </div>
     </div>
   </div>
 </div>

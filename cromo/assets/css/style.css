@@ -708,7 +708,14 @@ img { display: block; max-width: 100%; }
 .form-input:focus, .form-textarea:focus, .form-select:focus { border-bottom-color: var(--black); }
 .form-input::placeholder, .form-textarea::placeholder { color: #ccc; font-weight: 300; }
 .form-textarea { resize: vertical; min-height: 80px; }
-.form-select { appearance: none; cursor: pointer; color: var(--gray); padding-right: 1.25rem; }
+.form-select { appearance: none; cursor: pointer; color: var(--gray); padding-right: 1.25rem;
+  border: none; border-bottom: 1px solid var(--border);
+  background: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+}
+.form-select option { color: var(--black); background: var(--white); padding: 0.5rem; }
 .form-select:focus { color: var(--black); }
 .form-select option { color: var(--black); background: var(--white); }
 .form-select.selected { color: var(--black); }

@@ -19,10 +19,16 @@
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="logo-img">
   </a>
   <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="es">ES</button>
+    <div class="lang-dropdown">
+      <button class="lang-current" id="langToggle">
+        <span>PT</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div class="lang-options" id="langOptions">
+        <button class="lang-option" data-lang="pt">Português</button>
+        <button class="lang-option" data-lang="en">English</button>
+        <button class="lang-option" data-lang="es">Español</button>
+      </div>
     </div>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="nav-cta">Contato</a>
   </div>

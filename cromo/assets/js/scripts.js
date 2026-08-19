@@ -180,4 +180,28 @@
 
     startAutoplay();
   }
+
+  /* Language dropdown */
+  var langToggle = document.getElementById('langToggle');
+  var langOptions = document.getElementById('langOptions');
+  var langDropdown = langToggle ? langToggle.closest('.lang-dropdown') : null;
+
+  if (langToggle && langOptions && langDropdown) {
+    langToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle('open');
+    });
+
+    langOptions.querySelectorAll('.lang-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var lang = this.getAttribute('data-lang');
+        langToggle.querySelector('span').textContent = lang.toUpperCase();
+        langDropdown.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', function() {
+      langDropdown.classList.remove('open');
+    });
+  }
 })();

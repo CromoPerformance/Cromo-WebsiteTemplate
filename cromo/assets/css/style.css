@@ -417,6 +417,10 @@ img { display: block; max-width: 100%; }
   padding: 0 5vw;
 }
 
+.solucoes-bg {
+  background: #f5f5f5;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1320,11 +1320,11 @@ body.page-hub { background: var(--white); }
 }
 
 /* Grid patterns - asymmetric editorial layout */
-.hub-item-0 { grid-column: span 8; }
-.hub-item-1 { grid-column: span 4; }
-.hub-item-2 { grid-column: span 5; }
-.hub-item-3 { grid-column: span 7; }
-.hub-item-4 { grid-column: span 5; }
+.hub-item-0 { grid-column: span 7; }
+.hub-item-1 { grid-column: span 5; }
+.hub-item-2 { grid-column: span 8; }
+.hub-item-3 { grid-column: span 4; }
+.hub-item-4 { grid-column: span 12; }
 
 /* Grid items */
 .hub-item {
@@ -1391,7 +1391,7 @@ body.page-hub { background: var(--white); }
 
 .hub-item-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--white);
   letter-spacing: 0.5px;

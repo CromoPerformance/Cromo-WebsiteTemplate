@@ -54,10 +54,4 @@ $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => -1, 'orderb
   </div>
 </main>
 
-<!-- Lightbox -->
-<div class="hub-lightbox" id="hubLightbox">
-  <button class="hub-lightbox-close" aria-label="Fechar">&times;</button>
-  <img src="" alt="" class="hub-lightbox-img">
-</div>
-
 <?php get_footer(); ?>

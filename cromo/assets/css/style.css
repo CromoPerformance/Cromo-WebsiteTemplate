@@ -716,6 +716,37 @@ img { display: block; max-width: 100%; }
   background-position: right 0.7rem center;
 }
 .form-select option { color: var(--black); background: var(--white); padding: 0.5rem; }
+
+/* Custom Select Dropdown */
+.form-select-hidden { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+.custom-select { position: relative; }
+.custom-select-trigger {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+  width: 100%; padding: 0.75rem 0; font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 400; border: none; border-bottom: 1px solid var(--border);
+  background: transparent; color: var(--gray); cursor: pointer; text-align: left;
+  transition: border-color 0.3s;
+}
+.custom-select-trigger svg { flex-shrink: 0; transition: transform 0.3s; color: var(--gray); }
+.custom-select.open .custom-select-trigger svg { transform: rotate(180deg); }
+.custom-select-trigger.has-value { color: var(--black); }
+.custom-select-options {
+  position: absolute; top: calc(100% + 4px); left: 0; width: 100%;
+  background: var(--white); border: 1px solid var(--border);
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity 0.25s, visibility 0.25s, transform 0.25s; z-index: 50;
+}
+.custom-select.open .custom-select-options {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.custom-select-option {
+  display: block; width: 100%; background: none; border: none; border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0.8rem; font-family: var(--font-body);
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.5px;
+  color: var(--gray); text-align: left; cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.custom-select-option:last-child { border-bottom: none; }
+.custom-select-option:hover { background: rgba(0,0,0,0.03); color: var(--black); }
 .form-select:focus { color: var(--black); }
 .form-select option { color: var(--black); background: var(--white); }
 .form-select.selected { color: var(--black); }

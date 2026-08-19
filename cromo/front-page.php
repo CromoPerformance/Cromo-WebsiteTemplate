@@ -185,23 +185,29 @@
         <div class="form-row">
           <div class="form-field">
             <label class="form-label" for="categoria">Categoria</label>
-            <select id="categoria" class="form-select">
-              <option value="" disabled selected>Selecione</option>
-              <option value="hotelaria">Hotelaria</option>
-              <option value="gastronomia">Gastronomia</option>
-              <option value="lifestyle">Lifestyle</option>
-              <option value="outro">Outro</option>
-            </select>
+            <div class="custom-select" data-name="categoria">
+              <button type="button" class="form-select custom-select-trigger"><span>Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
+              <div class="custom-select-options">
+                <button type="button" class="custom-select-option" data-value="hotelaria">Hotelaria</button>
+                <button type="button" class="custom-select-option" data-value="gastronomia">Gastronomia</button>
+                <button type="button" class="custom-select-option" data-value="lifestyle">Lifestyle</button>
+                <button type="button" class="custom-select-option" data-value="outro">Outro</button>
+              </div>
+              <select name="categoria" class="form-select-hidden" tabindex="-1"><option value="" disabled selected>Selecione</option><option value="hotelaria">Hotelaria</option><option value="gastronomia">Gastronomia</option><option value="lifestyle">Lifestyle</option><option value="outro">Outro</option></select>
+            </div>
           </div>
           <div class="form-field">
             <label class="form-label" for="equipe">Equipe</label>
-            <select id="equipe" class="form-select">
-              <option value="" disabled selected>Selecione</option>
-              <option value="1-5">1 a 5 pessoas</option>
-              <option value="5-15">5 a 15 pessoas</option>
-              <option value="15-50">15 a 50 pessoas</option>
-              <option value="50+">Mais de 50 pessoas</option>
-            </select>
+            <div class="custom-select" data-name="equipe">
+              <button type="button" class="form-select custom-select-trigger"><span>Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
+              <div class="custom-select-options">
+                <button type="button" class="custom-select-option" data-value="1-5">1 a 5 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="5-15">5 a 15 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="15-50">15 a 50 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="50+">Mais de 50 pessoas</button>
+              </div>
+              <select name="equipe" class="form-select-hidden" tabindex="-1"><option value="" disabled selected>Selecione</option><option value="1-5">1 a 5 pessoas</option><option value="5-15">5 a 15 pessoas</option><option value="15-50">15 a 50 pessoas</option><option value="50+">Mais de 50 pessoas</option></select>
+            </div>
           </div>
         </div>
         <div class="form-field">

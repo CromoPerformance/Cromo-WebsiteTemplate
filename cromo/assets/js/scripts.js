@@ -210,5 +210,35 @@
     document.querySelectorAll('.lang-dropdown.open').forEach(function(d) {
       d.classList.remove('open');
     });
+    document.querySelectorAll('.custom-select.open').forEach(function(d) {
+      d.classList.remove('open');
+    });
+  });
+
+  /* Custom select dropdowns */
+  document.querySelectorAll('.custom-select').forEach(function(sel) {
+    var trigger = sel.querySelector('.custom-select-trigger');
+    var options = sel.querySelector('.custom-select-options');
+    var hidden = sel.querySelector('.form-select-hidden');
+    var spanText = trigger.querySelector('span');
+
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.custom-select.open').forEach(function(d) {
+        if (d !== sel) d.classList.remove('open');
+      });
+      sel.classList.toggle('open');
+    });
+
+    options.querySelectorAll('.custom-select-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var val = this.getAttribute('data-value');
+        var txt = this.textContent;
+        spanText.textContent = txt;
+        trigger.classList.add('has-value');
+        hidden.value = val;
+        sel.classList.remove('open');
+      });
+    });
   });
 })();

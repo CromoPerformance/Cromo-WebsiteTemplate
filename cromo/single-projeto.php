@@ -36,18 +36,15 @@
     }
   }
 
-  // Build gallery rows: auto-assign layout patterns (no repeats)
-  $patterns = ['full', 'two-wide-left', 'full', 'three-equal', 'two-wide-right'];
+  // Build gallery rows: always grid, never single
+  $patterns = ['three-equal', 'two-wide-left', 'three-equal', 'two-wide-right'];
   $gallery_rows = [];
   $i = 0;
   $patIdx = 0;
   $count = count($urls);
   while ($i < $count) {
     $pattern = $patterns[$patIdx % count($patterns)];
-    if ($pattern === 'full') {
-      $gallery_rows[] = ['layout' => 'full', 'images' => [$urls[$i]]];
-      $i++;
-    } elseif ($pattern === 'two-wide-left' || $pattern === 'two-wide-right') {
+    if ($pattern === 'two-wide-left' || $pattern === 'two-wide-right') {
       $imgs = [$urls[$i]];
       if (isset($urls[$i + 1])) $imgs[] = $urls[$i + 1];
       $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];

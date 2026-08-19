@@ -23,14 +23,18 @@
   // Fallback: read gallery from WP Gallery block in post content
   if (empty($gallery)) {
     $content = get_the_content();
-    // Extract image URLs from wp:image blocks
-    if (preg_match_all('/<img[^>]+src=["\']([^"\']+)["\']/', $content, $matches)) {
-      foreach ($matches[1] as $url) {
-        $gallery[] = [
-          'layout' => 'full',
-          'img_1' => $url,
-          'class_1' => ''
-        ];
+    // Find wp-block-gallery sections and extract images from them
+    if (preg_match_all('/<figure[^>]*class="[^"]*wp-block-gallery[^"]*"[^>]*>(.*?)<\/figure>/s', $content, $gallery_matches)) {
+      foreach ($gallery_matches[1] as $gallery_html) {
+        if (preg_match_all('/<img[^>]+src=["\']([^"\']+)["\']/', $gallery_html, $img_matches)) {
+          foreach ($img_matches[1] as $url) {
+            $gallery[] = [
+              'layout' => 'full',
+              'img_1' => $url,
+              'class_1' => ''
+            ];
+          }
+        }
       }
     }
   }

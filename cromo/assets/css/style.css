@@ -1512,7 +1512,8 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
   .hub-item-2 .hub-item-img,
   .hub-item-3 .hub-item-img,
   .hub-item-4 .hub-item-img {
-    aspect-ratio: 3/4;
+    aspect-ratio: 16/9;
+    max-height: 180px;
   }
 
   .hub-item-overlay {

@@ -12,25 +12,21 @@
     <h4 class="h4">Navegação</h4>
     <a href="<?php echo esc_url(home_url('/#about')); ?>">Sobre</a>
     <a href="<?php echo esc_url(home_url('/#solucoes')); ?>">Soluções</a>
-    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>">Portfólio</a>
-    <a href="<?php echo esc_url(home_url('/#metodologia')); ?>">Metodologia</a>
-    <a href="<?php echo esc_url(home_url('/blog')); ?>">Blog</a>
+    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>">Projetos</a>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>">Contato</a>
   </div>
   <div class="footer-col">
     <h4 class="h4">Redes</h4>
     <a href="https://instagram.com/studiocromo" target="_blank">Instagram</a>
     <a href="https://linkedin.com/company/studiocromo" target="_blank">LinkedIn</a>
-    <a href="https://youtube.com/@studiocromo" target="_blank">YouTube</a>
-    <a href="<?php echo esc_url(home_url('/projeto')); ?>">Acervo</a>
   </div>
   <div class="footer-col">
     <h4 class="h4">Contato</h4>
-    <a href="mailto:<?php echo esc_attr(cromo_get('contact_email', 'ola@studiocromo.com')); ?>">
-      <?php echo esc_html(cromo_get('contact_email', 'ola@studiocromo.com')); ?>
+    <a href="mailto:studio.cromo.studio@gmail.com">
+      studio.cromo.studio@gmail.com
     </a>
-    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', cromo_get('contact_phone', '(21) 99999-9999'))); ?>">
-      <?php echo esc_html(cromo_get('contact_phone', '(21) 99999-9999')); ?>
+    <a href="tel:5521969032564">
+      (21) 96903-2564
     </a>
   </div>
   <div class="footer-bottom">

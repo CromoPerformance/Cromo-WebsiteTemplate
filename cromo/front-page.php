@@ -109,76 +109,6 @@
   </div>
 </section>
 
-<div class="section stats-header">
-  <div class="container" style="text-align:center;">
-    <span class="eyebrow"><?php echo esc_html(cromo_get('stats_eyebrow', 'Métricas')); ?></span>
-    <h2 class="h2" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
-      <?php echo esc_html(cromo_get('stats_title', 'Números que falam por si')); ?>
-    </h2>
-  </div>
-</div>
-
-<section class="stats-section">
-  <div class="container">
-    <?php $stats = cromo_get('stats_items', []); if (is_array($stats) && count($stats)): ?>
-    <div class="stats-grid-alt">
-      <?php $d = 0; foreach ($stats as $s): ?>
-      <div class="stat-item reveal" style="<?php echo $d > 0 ? 'transition-delay:' . $d . 's;' : ''; ?>">
-        <span class="stat-num"><?php echo esc_html($s['number'] ?? ''); ?></span>
-        <p class="stat-desc"><?php echo esc_html($s['description'] ?? ''); ?></p>
-      </div>
-      <?php $d += 0.15; endforeach; ?>
-    </div>
-    <?php endif; ?>
-  </div>
-</section>
-
-<section id="metodologia">
-  <?php $steps = cromo_get('meth_steps', []); if (is_array($steps) && count($steps)): ?>
-  <div class="methodology-grid">
-    <div class="method-sticky">
-      <span class="eyebrow"><?php echo esc_html(cromo_get('meth_eyebrow', 'Como fazemos')); ?></span>
-      <h2 class="h2" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">
-        <?php echo esc_html(cromo_get('meth_title', 'Metodologia')); ?>
-      </h2>
-      <p class="body-sm" style="margin-top:1rem;">
-        <?php echo esc_html(cromo_get('meth_desc', 'Cinco passos para transformar sua marca em referência visual.')); ?>
-      </p>
-    </div>
-    <div class="method-steps">
-      <?php foreach ($steps as $step): ?>
-      <div class="method-step reveal">
-        <span class="method-num">/ <?php echo esc_html($step['number'] ?? ''); ?></span>
-        <h3 class="h3"><?php echo esc_html($step['title'] ?? ''); ?></h3>
-        <p class="body"><?php echo esc_html($step['description'] ?? ''); ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-  <?php endif; ?>
-</section>
-
-<div class="section clients-header">
-  <div class="container">
-    <span class="eyebrow"><?php echo esc_html(cromo_get('clients_eyebrow', 'Parceiros')); ?></span>
-    <h2 class="h2" style="font-size: clamp(1.8rem, 4vw, 3rem);">
-      <?php echo esc_html(cromo_get('clients_title', 'Marcas que confiam na Cromo')); ?>
-    </h2>
-  </div>
-</div>
-
-<?php $clients = cromo_get('clients_list', []); if (is_array($clients) && count($clients)): ?>
-<div class="clients-section">
-  <div class="marquee">
-    <div class="marquee-track">
-      <?php foreach (array_merge($clients, $clients) as $c): ?>
-      <span class="marquee-item"><?php echo esc_html($c['name'] ?? ''); ?></span>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</div>
-<?php endif; ?>
-
 <section id="contato" class="cta-section">
   <div class="cta-grid">
     <div class="cta-heading">
@@ -186,15 +116,7 @@
       <h2 class="h2"><?php echo esc_html(cromo_get('contact_title', 'Vamos conversar?')); ?></h2>
       <p class="body"><?php echo esc_html(cromo_get('contact_desc', 'Conte-nos sobre seu projeto e descubra como podemos transformar sua comunicação visual.')); ?></p>
       <div>
-        <?php $phone = cromo_get('contact_phone'); if ($phone): ?>
-        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $phone)); ?>" class="btn btn-outline"><?php echo esc_html($phone); ?></a>
-        <?php endif; ?>
-        <?php $email = cromo_get('contact_email'); if ($email): ?>
-        <a href="mailto:<?php echo esc_attr($email); ?>" class="btn btn-outline"><?php echo esc_html($email); ?></a>
-        <?php endif; ?>
-        <?php $insta = cromo_get('contact_insta'); if ($insta): ?>
-        <a href="https://instagram.com/<?php echo esc_attr(ltrim($insta, '@')); ?>" target="_blank" class="btn btn-outline"><?php echo esc_html($insta); ?></a>
-        <?php endif; ?>
+        <a href="https://wa.me/5521969032564" target="_blank" class="btn btn-primary">Fale Conosco</a>
       </div>
     </div>
     <div>

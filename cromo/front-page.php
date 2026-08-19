@@ -72,7 +72,7 @@
       <div class="portfolio-slide-content">
         <span class="portfolio-slide-cat"><?php echo $loc ? esc_html($loc) : ($cat ? esc_html($cat) : ''); ?></span>
         <h2 class="portfolio-slide-title"><?php echo esc_html($projeto->post_title); ?></h2>
-        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-white btn-slide">Fale Conosco</a>
+        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-white btn-slide">Ver Mais</a>
       </div>
     </div>
     <?php $idx++; endforeach; wp_reset_postdata(); ?>

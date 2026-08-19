@@ -749,7 +749,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
   transform: scale(1.05);
   transition: transform 6s ease-out;
 }

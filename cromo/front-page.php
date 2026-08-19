@@ -54,24 +54,6 @@
   </div>
 </div>
 
-<div id="solucoes" class="section">
-  <div class="container">
-    <span class="eyebrow"><?php echo esc_html(cromo_get('sol_eyebrow', 'O que fazemos')); ?></span>
-    <h2 class="h2"><?php echo esc_html(cromo_get('sol_title', 'Soluções integradas para potencializar sua marca')); ?></h2>
-    <?php $sol_items = cromo_get('sol_items', []); if (is_array($sol_items) && count($sol_items)): ?>
-    <div class="solutions-grid">
-      <?php foreach ($sol_items as $item): ?>
-      <div class="solution-card">
-        <span class="solution-num"><?php echo esc_html($item['number'] ?? ''); ?></span>
-        <h4 class="h4"><?php echo esc_html($item['title'] ?? ''); ?></h4>
-        <p class="body-sm"><?php echo esc_html($item['description'] ?? ''); ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
-  </div>
-</div>
-
 <section id="portfolio" class="section-border">
   <div class="portfolio-grid">
     <div class="portfolio-sticky">
@@ -108,6 +90,24 @@
     </div>
   </div>
 </section>
+
+<div id="solucoes" class="section">
+  <div class="container">
+    <span class="eyebrow"><?php echo esc_html(cromo_get('sol_eyebrow', 'O que fazemos')); ?></span>
+    <h2 class="h2"><?php echo esc_html(cromo_get('sol_title', 'Soluções integradas para potencializar sua marca')); ?></h2>
+    <?php $sol_items = cromo_get('sol_items', []); if (is_array($sol_items) && count($sol_items)): ?>
+    <div class="solutions-grid">
+      <?php foreach ($sol_items as $item): ?>
+      <div class="solution-card">
+        <span class="solution-num"><?php echo esc_html($item['number'] ?? ''); ?></span>
+        <h4 class="h4"><?php echo esc_html($item['title'] ?? ''); ?></h4>
+        <p class="body-sm"><?php echo esc_html($item['description'] ?? ''); ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+  </div>
+</div>
 
 <section id="contato" class="cta-section">
   <div class="cta-grid">

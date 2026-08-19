@@ -427,7 +427,7 @@ img { display: block; max-width: 100%; }
   gap: 6vw;
   align-items: center;
 }
-.about-image { width: 100%; height: 50vh; object-fit: cover; border-radius: 2px; }
+.about-image { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
 .about-grid .body { color: var(--black); line-height: 1.3; }
 
 /* Solutions */
@@ -435,7 +435,7 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; margin-top: 2.5rem; background: var(--border);
 }
-.solution-card { background: var(--white); padding: 3rem 2.5rem; }
+.solution-card { background: #ebebeb; padding: 3rem 2.5rem; }
 .solution-num {
   font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
   color: var(--gray); display: block; margin-bottom: 1.5rem;

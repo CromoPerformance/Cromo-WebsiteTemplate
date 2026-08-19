@@ -979,6 +979,7 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
   .form-input, .form-textarea, .form-select { padding: 1rem 0; font-size: 1rem; }
   .footer { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .footer-brand { grid-column: 1 / -1; text-align: center; }
+  .footer-brand .body-sm { margin: 0 auto; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   .footer .logo-img { height: 32px; }
   .form-submit { align-self: center; }

@@ -16,16 +16,19 @@
   /* Hamburger menu */
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
+  var siteNav = document.querySelector('.site-nav');
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('open');
+      if (siteNav) siteNav.classList.toggle('menu-open');
       document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
     mobileMenu.querySelectorAll('.mobile-link').forEach(function(link) {
       link.addEventListener('click', function() {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('open');
+        if (siteNav) siteNav.classList.remove('menu-open');
         document.body.style.overflow = '';
       });
     });

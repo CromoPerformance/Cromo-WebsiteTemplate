@@ -228,6 +228,7 @@ img { display: block; max-width: 100%; }
   background: transparent; border-bottom: 1px solid transparent;
   transition: background 0.4s ease, border-color 0.4s ease;
 }
+.site-nav.menu-open { z-index: 200; }
 .site-nav.scrolled {
   background: var(--white); border-bottom-color: var(--border);
 }

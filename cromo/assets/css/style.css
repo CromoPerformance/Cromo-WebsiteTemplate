@@ -1254,21 +1254,16 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
    HUB DE PROJETOS
    ======================================== */
 
-body.page-hub { background: #f5f4f2; }
+body.page-hub { background: var(--white); }
 
 .hub {
   min-height: 100vh;
-  padding: 0 5vw;
+  padding: 0;
 }
 
 .hub-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: 16px;
+  width: 100%;
   padding: 4rem 5vw 5rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
 }
 
 /* Header */
@@ -1385,6 +1380,7 @@ body.page-hub { background: #f5f4f2; }
 }
 
 .hub-item-cat {
+  display: none;
   font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 500;
@@ -1462,9 +1458,6 @@ body.page-hub { background: #f5f4f2; }
 
 @media (max-width: 768px) {
   .hub-container {
-    border-radius: 0;
-    margin-top: 0;
-    margin-bottom: 0;
     padding: 3rem 5vw 4rem;
   }
 

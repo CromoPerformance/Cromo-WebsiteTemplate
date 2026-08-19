@@ -129,6 +129,43 @@
   </div>
 </div>
 
+<section id="metodologia" class="metodologia-section">
+  <div class="container">
+    <span class="eyebrow">Como fazemos</span>
+    <h2 class="h2">Metodologia</h2>
+    <p class="body" style="margin-top:1rem; max-width:600px;">
+      Cinco passos para transformar sua marca em referência visual.
+    </p>
+    <div class="method-steps">
+      <div class="method-step">
+        <span class="method-num">/ 01</span>
+        <h3 class="h3">Descoberta</h3>
+        <p class="body">Entendemos sua marca, público e objetivos em profundidade.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">/ 02</span>
+        <h3 class="h3">Estratégia</h3>
+        <p class="body">Definimos o posicionamento e a linguagem visual da sua marca.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">/ 03</span>
+        <h3 class="h3">Criação</h3>
+        <p class="body">Desenvolvemos os materiais com foco em identidade e impacto.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">/ 04</span>
+        <h3 class="h3">Produção</h3>
+        <p class="body">Executamos fotografia, vídeo e conteúdo com excelência.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">/ 05</span>
+        <h3 class="h3">Entrega</h3>
+        <p class="body">Aplicamos, medimos e otimizamos para resultados reais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contato" class="cta-section">
   <div class="cta-grid">
     <div class="cta-heading">

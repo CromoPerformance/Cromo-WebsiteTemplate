@@ -183,6 +183,40 @@ img { display: block; max-width: 100%; }
 
 .btn-white:hover { background: transparent; color: #fff; }
 
+/* Metodologia */
+.metodologia-section {
+  padding: 10vh 5vw;
+  background: #f5f5f5;
+}
+
+.metodologia-section .method-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.metodologia-section .method-step {
+  padding: 1.5rem 0;
+}
+
+.method-num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.4);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .metodologia-section .method-steps {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .section { padding: 5rem 0; content-visibility: auto; contain-intrinsic-size: 800px; }
 .section-border { border-bottom: none; content-visibility: auto; contain-intrinsic-size: 1200px; }
 #solucoes.section { padding: 8vh 0 14vh; }
@@ -474,8 +508,8 @@ img { display: block; max-width: 100%; }
 }
 
 /* CTA / Contact */
-.cta-section { content-visibility: auto; contain-intrinsic-size: 600px; padding: 15vh 4vw; background: var(--white); color: var(--black); }
-.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; align-items: center; }
+.cta-section { content-visibility: auto; contain-intrinsic-size: 600px; padding: 15vh 5vw; background: var(--white); color: var(--black); }
+.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; width: 100%; align-items: center; }
 .cta-heading .eyebrow { color: var(--gray); margin-bottom: 0.75rem; }
 .cta-heading .h2 { margin-bottom: 1rem; }
 .cta-heading .body { color: var(--gray); margin-bottom: 1.5rem; max-width: 400px; }

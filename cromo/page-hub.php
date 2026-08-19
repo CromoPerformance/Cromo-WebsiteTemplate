@@ -13,7 +13,7 @@ $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => -1, 'orderb
       <div class="hub-intro">
         <div class="hub-intro-text">
           <h1 class="hub-title">Projetos</h1>
-          <p class="hub-desc">Fotografia, vídeo e estratégia visual para hotelaria e gastronomia.</p>
+          <p class="hub-desc">Fotografia, vídeo e estratégia visual para hotelaria, gastronomia e lifestyle de luxo. Cada projeto é uma experiência única, direção artística e conteúdo que conecta marcas aos seus clientes.</p>
         </div>
       </div>
     </header>

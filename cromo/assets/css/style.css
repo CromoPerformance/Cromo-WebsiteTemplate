@@ -1304,6 +1304,7 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 .hub-intro-text {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   gap: 3rem;
 }
 

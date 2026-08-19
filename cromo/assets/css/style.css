@@ -512,7 +512,7 @@ img { display: block; max-width: 100%; }
   color: var(--gray); display: block; margin-bottom: 1.5rem;
 }
 .solution-card .h4 { font-size: 1.15rem; margin-bottom: 0.75rem; line-height: 1.3; }
-.solution-card .body-sm { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+.solution-card .body-sm { color: var(--gray); font-size: 1rem; line-height: 1.6; }
 
 /* Portfolio */
 .portfolio-grid { display: grid; grid-template-columns: 1fr 1.5fr; min-height: 100vh; }

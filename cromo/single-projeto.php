@@ -5,16 +5,22 @@
   $year = get_post_meta(get_the_ID(), '_cromo_year', true);
   $next = get_post_meta(get_the_ID(), '_cromo_next', true);
   $gallery = get_post_meta(get_the_ID(), '_cromo_gallery', true) ?: [];
+  $location = get_post_meta(get_the_ID(), '_cromo_location', true);
 ?>
 
 <section class="proj-hero">
   <img src="<?php echo esc_url($hero ?: get_template_directory_uri() . '/assets/images/hero.avif'); ?>" alt="<?php the_title_attribute(); ?>">
+  <div class="proj-hero-overlay">
+    <div class="proj-hero-content">
+      <?php if ($location): ?><span class="proj-hero-location"><?php echo esc_html($location); ?></span><?php endif; ?>
+      <h1 class="proj-hero-title"><?php the_title(); ?></h1>
+    </div>
+  </div>
 </section>
 
 <div class="proj-header">
   <div class="proj-header-left">
     <a href="<?php echo esc_url(home_url('/projeto')); ?>" class="proj-back">&larr; Acervo</a>
-    <h1 class="proj-title"><?php the_title(); ?></h1>
   </div>
   <div class="proj-meta">
     <?php if ($cat): ?><span><?php echo esc_html($cat); ?></span><?php endif; ?>

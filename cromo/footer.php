@@ -4,24 +4,24 @@
     <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
       <img src="<?php echo esc_url(cromo_img('footer_logo', 'black-basic.avif')); ?>" alt="Cromo" class="logo-img" style="height:40px;">
     </a>
-    <p class="body-sm" style="max-width:300px;">
+    <p class="body-sm" style="max-width:300px;" data-i18n="footer_desc">
       <?php echo esc_html(cromo_get('footer_desc', 'Fotografia, vídeo e estratégia digital para hotelaria, gastronomia & lifestyle de luxo.')); ?>
     </p>
   </div>
   <div class="footer-col">
-    <h4 class="h4">Navegação</h4>
-    <a href="<?php echo esc_url(home_url('/#about')); ?>">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>">Projetos</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>">Soluções</a>
-    <a href="<?php echo esc_url(home_url('/#contato')); ?>">Contato</a>
+    <h4 class="h4" data-i18n="footer_nav">Navegação</h4>
+    <a href="<?php echo esc_url(home_url('/#about')); ?>" data-i18n="nav_sobre">Sobre</a>
+    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" data-i18n="nav_projetos">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" data-i18n="nav_solucoes">Soluções</a>
+    <a href="<?php echo esc_url(home_url('/#contato')); ?>" data-i18n="nav_contato">Contato</a>
   </div>
   <div class="footer-col">
-    <h4 class="h4">Redes</h4>
+    <h4 class="h4" data-i18n="footer_redes">Redes</h4>
     <a href="https://instagram.com/studiocromo" target="_blank">Instagram</a>
     <a href="https://linkedin.com/company/studiocromo" target="_blank">LinkedIn</a>
   </div>
   <div class="footer-col">
-    <h4 class="h4">Contato</h4>
+    <h4 class="h4" data-i18n="footer_contato">Contato</h4>
     <a href="mailto:studio.cromo.studio@gmail.com">
       studio.cromo.studio@gmail.com
     </a>

@@ -11,9 +11,9 @@
 
 <nav class="site-nav">
   <div class="nav-left">
-    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="nav-link">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="nav-link">Projetos</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="nav-link">Soluções</a>
+    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="nav-link" data-i18n="nav_sobre">Sobre</a>
+    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="nav-link" data-i18n="nav_projetos">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="nav-link" data-i18n="nav_solucoes">Soluções</a>
   </div>
   <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="logo-img">
@@ -30,7 +30,7 @@
         <button class="lang-option" data-lang="es">Español</button>
       </div>
     </div>
-    <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="nav-cta">Contato</a>
+    <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="nav-cta" data-i18n="nav_contato">Contato</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Abrir menu">
     <span></span>
@@ -39,10 +39,10 @@
   </button>
   <div class="mobile-menu" id="mobileMenu">
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="mobile-menu-logo" style="filter: invert(1);">
-    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="mobile-link">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="mobile-link">Projetos</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link">Soluções</a>
-    <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="mobile-link mobile-cta">Contato</a>
+    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="mobile-link" data-i18n="nav_sobre">Sobre</a>
+    <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="mobile-link" data-i18n="nav_projetos">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link" data-i18n="nav_solucoes">Soluções</a>
+    <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="mobile-link mobile-cta" data-i18n="nav_contato">Contato</a>
     <div class="lang-dropdown" style="margin-top: 1rem;">
       <button class="lang-current" id="langToggleMobile">
         <span>PT-BR</span>

@@ -1540,3 +1540,27 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
     font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
 }
+
+/* ═══════════════════════════════════════════
+   FORM VALIDATION
+   ═══════════════════════════════════════════ */
+.form-field { position: relative; }
+.field-error {
+  display: none; font-size: 0.7rem; color: #d63638;
+  margin-top: 4px; letter-spacing: 0.5px;
+}
+.form-field.invalid .form-input,
+.form-field.invalid .form-textarea {
+  border-color: #d63638;
+}
+.form-field.invalid .field-error { display: block; }
+.form-field.valid .form-input,
+.form-field.valid .form-textarea {
+  border-color: #00a32a;
+}
+
+/* Language option active */
+.lang-option.active {
+  color: var(--white) !important;
+  font-weight: 600;
+}

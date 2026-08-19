@@ -16,6 +16,10 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style('cromo', get_template_directory_uri() . '/assets/css/style.css', [], CROMO_VERSION);
   wp_enqueue_script('cromo', get_template_directory_uri() . '/assets/js/scripts.js', [], CROMO_VERSION, true);
+  wp_localize_script('cromo', 'cromoData', [
+    'ajaxUrl' => admin_url('admin-ajax.php'),
+    'nonce' => wp_create_nonce('cromo_lead_nonce'),
+  ]);
 });
 
 // ─── CPT: Projeto ───
@@ -490,3 +494,87 @@ function cromo_img($key, $fallback = '') {
   $v = cromo_get($key, '');
   return $v ?: ($fallback ? get_template_directory_uri() . '/assets/images/' . $fallback : '');
 }
+
+// ─── CPT: Lead ───
+add_action('init', function () {
+  register_post_type('lead', [
+    'labels' => [
+      'name' => __('Leads', 'cromo'),
+      'singular_name' => __('Lead', 'cromo'),
+      'add_new_item' => __('Adicionar Novo Lead', 'cromo'),
+      'edit_item' => __('Editar Lead', 'cromo'),
+      'view_item' => __('Ver Lead', 'cromo'),
+      'search_items' => __('Buscar Leads', 'cromo'),
+      'not_found' => __('Nenhum lead encontrado', 'cromo'),
+    ],
+    'public' => false,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-email-alt',
+    'supports' => ['title'],
+    'show_in_rest' => true,
+  ]);
+});
+
+// ─── AJAX: Save Lead ───
+add_action('wp_ajax_cromo_save_lead', 'cromo_save_lead');
+add_action('wp_ajax_nopriv_cromo_save_lead', 'cromo_save_lead');
+function cromo_save_lead() {
+  check_ajax_referer('cromo_lead_nonce', 'nonce');
+
+  $name = sanitize_text_field($_POST['nome'] ?? '');
+  $email = sanitize_email($_POST['email'] ?? '');
+  if (empty($name) || empty($email)) {
+    wp_send_json_error(['message' => 'Nome e email são obrigatórios.']);
+  }
+
+  $post_id = wp_insert_post([
+    'post_type' => 'lead',
+    'post_title' => $name,
+    'post_status' => 'private',
+  ]);
+
+  if (is_wp_error($post_id)) {
+    wp_send_json_error(['message' => 'Erro ao salvar. Tente novamente.']);
+  }
+
+  $meta = [
+    '_cromo_email'     => $email,
+    '_cromo_whatsapp'  => sanitize_text_field($_POST['whatsapp'] ?? ''),
+    '_cromo_empresa'   => sanitize_text_field($_POST['empresa'] ?? ''),
+    '_cromo_cargo'     => sanitize_text_field($_POST['cargo'] ?? ''),
+    '_cromo_instagram' => sanitize_text_field($_POST['instagram'] ?? ''),
+    '_cromo_categoria' => sanitize_text_field($_POST['categoria'] ?? ''),
+    '_cromo_equipe'    => sanitize_text_field($_POST['equipe'] ?? ''),
+    '_cromo_projeto'   => sanitize_textarea_field($_POST['projeto'] ?? ''),
+  ];
+
+  foreach ($meta as $key => $value) {
+    update_post_meta($post_id, $key, $value);
+  }
+
+  wp_send_json_success(['message' => 'Mensagem enviada com sucesso!']);
+}
+
+// ─── Admin Columns for Leads ───
+add_filter('manage_lead_posts_columns', function ($columns) {
+  $new = [];
+  foreach ($columns as $key => $val) {
+    $new[$key] = $val;
+    if ($key === 'title') {
+      $new['email']     = 'Email';
+      $new['whatsapp']  = 'WhatsApp';
+      $new['empresa']   = 'Empresa';
+      $new['categoria'] = 'Categoria';
+    }
+  }
+  return $new;
+});
+
+add_action('manage_lead_posts_custom_column', function ($column, $post_id) {
+  switch ($column) {
+    case 'email':     echo esc_html(get_post_meta($post_id, '_cromo_email', true)); break;
+    case 'whatsapp':  echo esc_html(get_post_meta($post_id, '_cromo_whatsapp', true)); break;
+    case 'empresa':   echo esc_html(get_post_meta($post_id, '_cromo_empresa', true)); break;
+    case 'categoria': echo esc_html(get_post_meta($post_id, '_cromo_categoria', true)); break;
+  }
+}, 10, 2);

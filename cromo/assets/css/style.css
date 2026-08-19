@@ -423,7 +423,7 @@ img { display: block; max-width: 100%; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.8fr;
-  gap: 4vw;
+  gap: 6vw;
   align-items: center;
 }
 
@@ -432,9 +432,10 @@ img { display: block; max-width: 100%; }
 }
 
 .about-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .about-subtitle {

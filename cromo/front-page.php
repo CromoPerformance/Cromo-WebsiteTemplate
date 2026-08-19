@@ -48,7 +48,7 @@
           <p class="body"><?php echo esc_html(cromo_get('about_desc2')); ?></p>
         <?php endif; ?>
       </div>
-      <img src="<?php echo esc_url(cromo_img('about_image', 'renan-blaute.avif')); ?>"
+      <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
            alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
     </div>
   </div>

@@ -1019,10 +1019,10 @@ img { display: block; max-width: 100%; }
   }
   .portfolio-nav {
     right: 1.5rem;
-    bottom: 2rem;
+    bottom: 4rem;
   }
   .portfolio-dots {
-    bottom: 2rem;
+    bottom: 1.5rem;
   }
   .portfolio-nav-btn {
     width: 40px;

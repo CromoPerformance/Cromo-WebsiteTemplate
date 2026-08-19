@@ -1310,8 +1310,8 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 
 .hub-title {
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 300;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -1px;
   color: var(--black);

@@ -55,6 +55,11 @@
       <div class="about-image-wrapper">
         <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
              alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
+        <div class="about-image-info">
+          <h3 class="about-image-name">Renan Blaute</h3>
+          <p class="about-image-role">Sócio e Diretor Criativo</p>
+          <p class="about-image-desc">Hotel & food photographer. Apaixonado por viagens e boas experiências.</p>
+        </div>
       </div>
     </div>
   </div>

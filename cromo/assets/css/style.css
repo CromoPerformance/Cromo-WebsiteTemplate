@@ -978,7 +978,7 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
   .proj-hero { min-height: 80vh; }
   .proj-hero-overlay { padding: 2rem 5vw; }
   .proj-header { padding: 2rem 1rem; }
-  .proj-gallery { padding: 0; }
+  .proj-gallery { padding: 1rem 0 3rem; }
   .proj-row { gap: 6px; margin-bottom: 6px; }
   .proj-row-two-wide-left, .proj-row-two-wide-right, .proj-row-two-equal { grid-template-columns: 1fr; }
   .proj-row-three { grid-template-columns: 1fr 1fr; }

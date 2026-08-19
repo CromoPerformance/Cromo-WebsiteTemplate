@@ -828,6 +828,14 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 .proj-meta span { text-transform: uppercase; }
 
 /* Gallery - full width asymmetric */
+.proj-back-btn {
+  position: fixed; top: 1.5rem; left: 1.5rem; z-index: 100;
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.9); border: none; border-radius: 50%;
+  color: var(--black); cursor: pointer; transition: background 0.3s, transform 0.3s;
+  text-decoration: none; backdrop-filter: blur(4px);
+}
+.proj-back-btn:hover { background: var(--white); transform: scale(1.1); }
 .proj-gallery { width: 100%; padding: 2rem 0 4rem; }
 .proj-row { display: grid; gap: 10px; margin-bottom: 10px; padding: 0; }
 .proj-row-two-wide-left { grid-template-columns: 2fr 1fr; }

@@ -25,15 +25,9 @@
   </div>
 </section>
 
-<div class="proj-header">
-  <div class="proj-header-left">
-    <a href="<?php echo esc_url(home_url('/projeto')); ?>" class="proj-back">&larr; Acervo</a>
-  </div>
-  <div class="proj-meta">
-    <?php if ($cat): ?><span><?php echo esc_html($cat); ?></span><?php endif; ?>
-    <?php if ($year): ?><span><?php echo esc_html($year); ?></span><?php endif; ?>
-  </div>
-</div>
+<a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="proj-back-btn" aria-label="Voltar">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+</a>
 
 <?php if (!empty($gallery)): ?>
 <div class="proj-gallery">

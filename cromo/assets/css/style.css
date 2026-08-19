@@ -417,7 +417,7 @@ img { display: block; max-width: 100%; }
 }
 
 .solucoes-bg {
-  background: #f5f5f5;
+  background: #fff;
 }
 
 .about-grid {
@@ -506,7 +506,7 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; margin-top: 2.5rem; background: var(--border);
 }
-.solution-card { background: #f5f5f5; padding: 3rem 2.5rem; }
+.solution-card { background: #fff; padding: 3rem 2.5rem; }
 .solution-num {
   font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
   color: var(--gray); display: block; margin-bottom: 1.5rem;

@@ -23,16 +23,14 @@
   // Fallback: read gallery from WP Gallery block in post content
   if (empty($gallery)) {
     $content = get_the_content();
-    if (preg_match_all('/wp:image\s*\{[^}]*"id"\s*:\s*(\d+)/', $content, $matches)) {
-      foreach ($matches[1] as $img_id) {
-        $url = wp_get_attachment_image_url($img_id, 'full');
-        if ($url) {
-          $gallery[] = [
-            'layout' => 'full',
-            'img_1' => $url,
-            'class_1' => ''
-          ];
-        }
+    // Extract image URLs from wp:image blocks
+    if (preg_match_all('/<img[^>]+src=["\']([^"\']+)["\']/', $content, $matches)) {
+      foreach ($matches[1] as $url) {
+        $gallery[] = [
+          'layout' => 'full',
+          'img_1' => $url,
+          'class_1' => ''
+        ];
       }
     }
   }

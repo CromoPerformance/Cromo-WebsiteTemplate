@@ -809,17 +809,16 @@ img { display: block; max-width: 100%; }
   line-height: 1.1; letter-spacing: 1px; max-width: 600px;
 }
 
-/* Always-white nav on projeto pages */
-body.single-projeto .site-nav { background: transparent; }
-body.single-projeto .site-nav.scrolled { background: transparent; }
-body.single-projeto .site-nav.scrolled .nav-link { color: var(--white); }
-body.single-projeto .site-nav.scrolled .nav-link::after { background: var(--white); }
-body.single-projeto .site-nav.scrolled .logo-img { filter: invert(1); }
-body.single-projeto .site-nav.scrolled .hamburger span { background: var(--white); }
-body.single-projeto .site-nav.scrolled .nav-cta { background: transparent; color: var(--white) !important; border-color: rgba(255,255,255,0.5); }
-body.single-projeto .site-nav.scrolled .nav-cta:hover { background: var(--white); color: var(--black) !important; border-color: var(--white); }
-body.single-projeto .site-nav.scrolled .lang-current { color: var(--white); border-color: rgba(255,255,255,0.3); }
-body.single-projeto .site-nav.scrolled .lang-btn, body.single-projeto .site-nav.scrolled .lang-option { color: var(--white); }
+/* White nav on projeto pages */
+body.single-projeto .site-nav { background: var(--white); }
+body.single-projeto .site-nav .nav-link { color: var(--black); }
+body.single-projeto .site-nav .nav-link::after { background: var(--black); }
+body.single-projeto .site-nav .logo-img { filter: none; }
+body.single-projeto .site-nav .hamburger span { background: var(--black); }
+body.single-projeto .site-nav .nav-cta { background: var(--black); color: var(--white) !important; border-color: var(--black); }
+body.single-projeto .site-nav .nav-cta:hover { background: #333; border-color: #333; }
+body.single-projeto .site-nav .lang-current { color: var(--black); border-color: rgba(0,0,0,0.15); }
+body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 .proj-header { padding: 3rem 2rem 3.5rem; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
 .proj-header-left { display: flex; flex-direction: column; }
 .proj-back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gray); text-decoration: none; font-size: 0.8rem; font-weight: 400; margin-bottom: 1rem; transition: color 0.2s; }

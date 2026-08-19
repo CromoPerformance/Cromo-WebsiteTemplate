@@ -19,6 +19,11 @@
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="logo-img">
   </a>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="nav-cta">Contato</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Abrir menu">

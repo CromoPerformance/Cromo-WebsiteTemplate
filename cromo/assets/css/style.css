@@ -1355,11 +1355,11 @@ body.page-hub { background: var(--white); }
 }
 
 /* Aspect ratios for variety */
-.hub-item-0 .hub-item-img { aspect-ratio: 16/10; }
+.hub-item-0 .hub-item-img { aspect-ratio: 5/3; }
 .hub-item-1 .hub-item-img { aspect-ratio: 3/4; }
-.hub-item-2 .hub-item-img { aspect-ratio: 4/5; }
-.hub-item-3 .hub-item-img { aspect-ratio: 3/2; }
-.hub-item-4 .hub-item-img { aspect-ratio: 1/1; }
+.hub-item-2 .hub-item-img { aspect-ratio: 16/9; }
+.hub-item-3 .hub-item-img { aspect-ratio: 3/4; }
+.hub-item-4 .hub-item-img { aspect-ratio: 21/9; }
 
 /* Overlay */
 .hub-item-overlay {

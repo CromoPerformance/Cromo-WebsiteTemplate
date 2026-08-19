@@ -1518,6 +1518,6 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
   }
 
   .hub-item-title {
-    font-size: 1rem;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
   }
 }

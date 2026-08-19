@@ -857,7 +857,7 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 .proj-placeholder:nth-child(3) { background: #c2bdb5; }
 .proj-row-full .proj-placeholder { background: #ccc8c1; }
 
-.proj-next { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 4rem; border-top: 1px solid var(--border); text-decoration: none; color: var(--black); transition: opacity 0.2s; }
+.proj-next { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 4rem; text-decoration: none; color: var(--black); transition: opacity 0.2s; }
 .proj-next:hover { opacity: 0.6; }
 .proj-next-label { font-size: 0.7rem; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; }
 .proj-next-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 400; }

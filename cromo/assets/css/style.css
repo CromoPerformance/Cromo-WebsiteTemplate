@@ -391,6 +391,36 @@ img { display: block; max-width: 100%; }
 .mobile-cta:hover { background: rgba(255,255,255,0.85); transform: scale(1.05); letter-spacing: 4px; }
 .mobile-cta::after { display: none; }
 
+/* Mobile Language Dropdown */
+.mobile-menu .lang-dropdown { position: relative; }
+.mobile-menu .lang-current {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: none; border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem; font-family: var(--font-body);
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 2px;
+  color: var(--white); cursor: pointer;
+}
+.mobile-menu .lang-current svg { transition: transform 0.3s; }
+.mobile-menu .lang-dropdown.open .lang-current svg { transform: rotate(180deg); }
+.mobile-menu .lang-options {
+  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(-4px);
+  background: var(--black); border: 1px solid rgba(255,255,255,0.2);
+  min-width: 160px; opacity: 0; visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s, transform 0.25s; z-index: 50;
+}
+.mobile-menu .lang-dropdown.open .lang-options {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.mobile-menu .lang-option {
+  display: block; width: 100%; background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0.6rem 1rem; font-family: var(--font-body);
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 2px;
+  color: rgba(255,255,255,0.6); text-align: center; cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-menu .lang-option:last-child { border-bottom: none; }
+.mobile-menu .lang-option:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+
 /* Hero */
 .hero {
   position: relative; width: 100%; min-height: 100vh; min-height: 100dvh;
@@ -678,14 +708,7 @@ img { display: block; max-width: 100%; }
 .form-input:focus, .form-textarea:focus, .form-select:focus { border-bottom-color: var(--black); }
 .form-input::placeholder, .form-textarea::placeholder { color: #ccc; font-weight: 300; }
 .form-textarea { resize: vertical; min-height: 80px; }
-.form-select { appearance: none; cursor: pointer; color: var(--gray); padding-right: 1.25rem;
-  border: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0.7rem; font-size: 0.75rem; font-weight: 400; letter-spacing: 1px;
-  background: var(--white);
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.7rem center;
-}
+.form-select { appearance: none; cursor: pointer; color: var(--gray); padding-right: 1.25rem; }
 .form-select:focus { color: var(--black); }
 .form-select option { color: var(--black); background: var(--white); }
 .form-select.selected { color: var(--black); }

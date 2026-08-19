@@ -182,26 +182,33 @@
   }
 
   /* Language dropdown */
-  var langToggle = document.getElementById('langToggle');
-  var langOptions = document.getElementById('langOptions');
-  var langDropdown = langToggle ? langToggle.closest('.lang-dropdown') : null;
+  function initLangDropdown(toggleId, optionsId) {
+    var toggle = document.getElementById(toggleId);
+    var options = document.getElementById(optionsId);
+    var dropdown = toggle ? toggle.closest('.lang-dropdown') : null;
 
-  if (langToggle && langOptions && langDropdown) {
-    langToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      langDropdown.classList.toggle('open');
-    });
-
-    langOptions.querySelectorAll('.lang-option').forEach(function(opt) {
-      opt.addEventListener('click', function() {
-        var lang = this.getAttribute('data-lang');
-        langToggle.querySelector('span').textContent = lang.toUpperCase();
-        langDropdown.classList.remove('open');
+    if (toggle && options && dropdown) {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
       });
-    });
 
-    document.addEventListener('click', function() {
-      langDropdown.classList.remove('open');
-    });
+      options.querySelectorAll('.lang-option').forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          var lang = this.getAttribute('data-lang');
+          toggle.querySelector('span').textContent = lang.toUpperCase();
+          dropdown.classList.remove('open');
+        });
+      });
+    }
   }
+
+  initLangDropdown('langToggle', 'langOptions');
+  initLangDropdown('langToggleMobile', 'langOptionsMobile');
+
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.lang-dropdown.open').forEach(function(d) {
+      d.classList.remove('open');
+    });
+  });
 })();

@@ -43,5 +43,16 @@
     <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="mobile-link">Projetos</a>
     <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link">Soluções</a>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="mobile-link mobile-cta">Contato</a>
+    <div class="lang-dropdown" style="margin-top: 1rem;">
+      <button class="lang-current" id="langToggleMobile">
+        <span>PT</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div class="lang-options" id="langOptionsMobile">
+        <button class="lang-option" data-lang="pt">Português</button>
+        <button class="lang-option" data-lang="en">English</button>
+        <button class="lang-option" data-lang="es">Español</button>
+      </div>
+    </div>
   </div>
 </nav>

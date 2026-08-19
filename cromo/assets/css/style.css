@@ -849,7 +849,7 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 .proj-row-two-wide-right { grid-template-columns: 1fr 2fr; }
 .proj-row-two-equal { grid-template-columns: 1fr 1fr; }
 .proj-row-full { grid-template-columns: 1fr; max-height: 55vh; }
-.proj-row-three { grid-template-columns: 1fr 1fr 1fr; }
+.proj-row-three, .proj-row-three-equal { grid-template-columns: 1fr 1fr 1fr; }
 .proj-row img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .proj-row img.proj-placeholder-lg,
 .proj-row .proj-placeholder-lg { aspect-ratio: 16/10; }

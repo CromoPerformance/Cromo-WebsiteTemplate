@@ -392,24 +392,24 @@ img { display: block; max-width: 100%; }
 .mobile-cta::after { display: none; }
 
 /* Mobile Language Dropdown */
-.mobile-menu .lang-dropdown { position: relative; }
+.mobile-menu .lang-dropdown { position: relative; margin-top: 1rem; }
 .mobile-menu .lang-current {
   display: flex; align-items: center; gap: 0.5rem;
   background: none; border: 1px solid rgba(255,255,255,0.3);
-  padding: 0.5rem 1rem; font-family: var(--font-body);
+  padding: 0.6rem 1.2rem; font-family: var(--font-body);
   font-size: 0.8rem; font-weight: 400; letter-spacing: 2px;
   color: var(--white); cursor: pointer;
 }
 .mobile-menu .lang-current svg { transition: transform 0.3s; }
 .mobile-menu .lang-dropdown.open .lang-current svg { transform: rotate(180deg); }
 .mobile-menu .lang-options {
-  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(-4px);
+  position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
   background: var(--black); border: 1px solid rgba(255,255,255,0.2);
   min-width: 160px; opacity: 0; visibility: hidden;
-  transition: opacity 0.25s, visibility 0.25s, transform 0.25s; z-index: 50;
+  transition: opacity 0.25s, visibility 0.25s; z-index: 120;
 }
 .mobile-menu .lang-dropdown.open .lang-options {
-  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+  opacity: 1; visibility: visible;
 }
 .mobile-menu .lang-option {
   display: block; width: 100%; background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);

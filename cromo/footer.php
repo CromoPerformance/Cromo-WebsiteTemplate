@@ -11,8 +11,8 @@
   <div class="footer-col">
     <h4 class="h4">Navegação</h4>
     <a href="<?php echo esc_url(home_url('/#about')); ?>">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>">Soluções</a>
     <a href="<?php echo esc_url(home_url('/#portfolio')); ?>">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>">Soluções</a>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>">Contato</a>
   </div>
   <div class="footer-col">

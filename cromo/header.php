@@ -11,9 +11,9 @@
 
 <nav class="site-nav">
   <div class="nav-left">
-    <a href="<?php echo esc_url(home_url('/#sobre')); ?>" class="nav-link">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="nav-link">Soluções</a>
+    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="nav-link">Sobre</a>
     <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="nav-link">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="nav-link">Soluções</a>
   </div>
   <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/black-basic.avif'); ?>" alt="Cromo" class="logo-img">
@@ -27,9 +27,9 @@
     <span></span>
   </button>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="<?php echo esc_url(home_url('/#sobre')); ?>" class="mobile-link">Sobre</a>
-    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link">Soluções</a>
+    <a href="<?php echo esc_url(home_url('/#about')); ?>" class="mobile-link">Sobre</a>
     <a href="<?php echo esc_url(home_url('/#portfolio')); ?>" class="mobile-link">Projetos</a>
+    <a href="<?php echo esc_url(home_url('/#solucoes')); ?>" class="mobile-link">Soluções</a>
     <a href="<?php echo esc_url(home_url('/#contato')); ?>" class="mobile-link mobile-cta">Contato</a>
   </div>
 </nav>

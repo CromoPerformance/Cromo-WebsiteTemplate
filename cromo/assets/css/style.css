@@ -829,14 +829,14 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
 
 /* Gallery - full width asymmetric */
 .proj-back-btn {
-  position: sticky; top: 80px; z-index: 50; float: left; margin-left: 5vw; margin-bottom: 1rem;
+  position: fixed; top: 80px; left: 5vw; z-index: 100;
   width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
   background: var(--white); border: 1px solid var(--border); border-radius: 4px;
   color: var(--black); cursor: pointer; transition: background 0.3s, box-shadow 0.3s;
   text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .proj-back-btn:hover { background: #f5f5f5; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-.proj-gallery { width: 100%; padding: 0 0 4rem; clear: both; }
+.proj-gallery { width: 100%; padding: 0 0 4rem; }
 .proj-row { display: grid; gap: 10px; margin-bottom: 10px; padding: 0; }
 .proj-row-two-wide-left { grid-template-columns: 2fr 1fr; }
 .proj-row-two-wide-right { grid-template-columns: 1fr 2fr; }

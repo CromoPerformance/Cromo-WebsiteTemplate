@@ -411,6 +411,10 @@ img { display: block; max-width: 100%; }
 }
 
 /* About */
+#about {
+  padding: 0;
+}
+
 #about .container,
 #solucoes .container {
   max-width: 100%;

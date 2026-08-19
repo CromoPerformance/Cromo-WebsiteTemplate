@@ -987,8 +987,7 @@ body.single-projeto .site-nav .lang-switcher { border-color: rgba(0,0,0,0.15); }
   .proj-header { padding: 2rem 1rem; }
   .proj-gallery { padding: 3rem 0 3rem; }
   .proj-row { gap: 6px; margin-bottom: 6px; }
-  .proj-row-two-wide-left, .proj-row-two-wide-right, .proj-row-two-equal { grid-template-columns: 1fr; }
-  .proj-row-three { grid-template-columns: 1fr 1fr; }
+  .proj-row-two-wide-left, .proj-row-two-wide-right, .proj-row-two-equal, .proj-row-three, .proj-row-three-equal { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

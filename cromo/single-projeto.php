@@ -37,24 +37,25 @@
   }
 
   // Build gallery rows: auto-assign layout patterns
-  $patterns = ['full', 'two_wide_left', 'full', 'three_equal', 'two_wide_right'];
+  $patterns = ['full', 'two-wide-left', 'full', 'three-equal', 'two-wide-right'];
   $gallery_rows = [];
   $ui = 0;
   foreach ($urls as $idx => $url) {
     $pattern = $patterns[$idx % count($patterns)];
     if ($pattern === 'full') {
       $gallery_rows[] = ['layout' => 'full', 'images' => [$url]];
-    } elseif ($pattern === 'two_wide_left' || $pattern === 'two_wide_right') {
+    } elseif ($pattern === 'two-wide-left' || $pattern === 'two-wide-right') {
       $imgs = [$url];
       if (isset($urls[$idx + 1])) { $imgs[] = $urls[$idx + 1]; $ui = $idx + 1; }
       $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];
-    } elseif ($pattern === 'three_equal') {
+    } elseif ($pattern === 'three-equal') {
       $imgs = [$url];
       if (isset($urls[$idx + 1])) $imgs[] = $urls[$idx + 1];
       if (isset($urls[$idx + 2])) $imgs[] = $urls[$idx + 2];
-      $gallery_rows[] = ['layout' => 'three_equal', 'images' => $imgs];
+      $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];
       if (isset($urls[$idx + 2])) $ui = $idx + 2;
     }
+  }
   }
 ?>
 

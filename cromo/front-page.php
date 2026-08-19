@@ -104,17 +104,28 @@
   <div class="container">
     <span class="eyebrow"><?php echo esc_html(cromo_get('sol_eyebrow', 'O que fazemos')); ?></span>
     <h2 class="h2"><?php echo esc_html(cromo_get('sol_title', 'Soluções integradas para potencializar sua marca')); ?></h2>
-    <?php $sol_items = cromo_get('sol_items', []); if (is_array($sol_items) && count($sol_items)): ?>
     <div class="solutions-grid">
-      <?php foreach ($sol_items as $item): ?>
       <div class="solution-card">
-        <span class="solution-num"><?php echo esc_html($item['number'] ?? ''); ?></span>
-        <h4 class="h4"><?php echo esc_html($item['title'] ?? ''); ?></h4>
-        <p class="body-sm"><?php echo esc_html($item['description'] ?? ''); ?></p>
+        <span class="solution-num">01</span>
+        <h4 class="h4">Fotografia</h4>
+        <p class="body-sm">Imagens que contam a história da sua marca com identidade visual autêntica e sofisticada.</p>
       </div>
-      <?php endforeach; ?>
+      <div class="solution-card">
+        <span class="solution-num">02</span>
+        <h4 class="h4">Vídeo</h4>
+        <p class="body-sm">Produção audiovisual que emociona e conecta, do conceito à entrega final.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-num">03</span>
+        <h4 class="h4">Comunicação</h4>
+        <p class="body-sm">Estratégia de conteúdo e posicionamento que fortalece sua presença no mercado.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-num">04</span>
+        <h4 class="h4">Marketing</h4>
+        <p class="body-sm">Campanhas digitais focadas em performance, engajamento e resultados mensuráveis.</p>
+      </div>
     </div>
-    <?php endif; ?>
   </div>
 </div>
 

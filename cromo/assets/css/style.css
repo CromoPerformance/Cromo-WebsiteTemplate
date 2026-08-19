@@ -377,7 +377,18 @@ img { display: block; max-width: 100%; }
 }
 
 /* About */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
+#about .container,
+#solucoes .container {
+  max-width: 100%;
+  padding: 0 5vw;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+}
 .about-image { width: 100%; height: 50vh; object-fit: cover; border-radius: 2px; }
 .about-grid .body { color: var(--black); line-height: 1.3; }
 

@@ -1295,7 +1295,8 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 
 /* Header */
 .hub-header {
-  margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .hub-intro {
@@ -1490,7 +1491,8 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
   }
 
   .hub-header {
-    margin-bottom: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
     padding-left: 5vw;
   }
 

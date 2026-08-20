@@ -1296,7 +1296,7 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 /* Header */
 .hub-header {
   margin-top: 5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
 }
 
 .hub-intro {

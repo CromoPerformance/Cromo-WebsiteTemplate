@@ -45,10 +45,10 @@
           <?php echo esc_html(cromo_get('about_subtitle', 'Comunicação visual estratégica para hotelaria, gastronomia & lifestyle de luxo.')); ?>
         </p>
         <?php if (cromo_get('about_desc1')): ?>
-          <p class="body" style="margin-bottom:1.5rem;"><?php echo esc_html(cromo_get('about_desc1')); ?></p>
+          <p class="body" style="margin-bottom:1.5rem;" data-i18n="about_desc1"><?php echo esc_html(cromo_get('about_desc1')); ?></p>
         <?php endif; ?>
         <?php if (cromo_get('about_desc2')): ?>
-          <p class="body"><?php echo esc_html(cromo_get('about_desc2')); ?></p>
+          <p class="body" data-i18n="about_desc2"><?php echo esc_html(cromo_get('about_desc2')); ?></p>
         <?php endif; ?>
         <a href="#contato" class="btn btn-outline about-btn" data-i18n="about_btn">Conheça a Cromo</a>
       </div>

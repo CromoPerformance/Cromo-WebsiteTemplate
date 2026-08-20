@@ -519,6 +519,10 @@ img { display: block; max-width: 100%; }
 .solucoes-bg {
   background: #fff;
 }
+.solucoes-bg .container {
+  max-width: 100%;
+  padding: 0 4vw;
+}
 
 .about-grid {
   display: grid;

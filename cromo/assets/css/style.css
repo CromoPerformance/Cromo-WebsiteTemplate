@@ -1565,6 +1565,8 @@ body.page-hub .site-nav.scrolled .logo-img, body.page-template-page-hub .site-na
 
 /* Language option active */
 .lang-option.active {
-  color: var(--white) !important;
+  color: var(--black) !important;
   font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

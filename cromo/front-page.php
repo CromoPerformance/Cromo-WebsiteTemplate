@@ -56,9 +56,9 @@
         <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
              alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
         <div class="about-image-info">
-          <h3 class="about-image-name">Renan Blaute</h3>
-          <p class="about-image-role">Sócio e Diretor Criativo</p>
-          <p class="about-image-desc">Hotel & food photographer. Apaixonado por viagens e boas experiências.</p>
+          <h3 class="about-image-name" data-i18n="about_name">Renan Blaute</h3>
+          <p class="about-image-role" data-i18n="about_role">Sócio e Diretor Criativo</p>
+          <p class="about-image-desc" data-i18n="about_desc_role">Hotel & food photographer. Apaixonado por viagens e boas experiências.</p>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
       <div class="portfolio-slide-content">
         <span class="portfolio-slide-cat"><?php echo $loc ? esc_html($loc) : ($cat ? esc_html($cat) : ''); ?></span>
         <h2 class="portfolio-slide-title"><?php echo esc_html($projeto->post_title); ?></h2>
-        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-white btn-slide">Ver Mais</a>
+        <a href="<?php echo esc_url(get_permalink($projeto->ID)); ?>" class="btn btn-white btn-slide" data-i18n="portfolio_btn">Ver Mais</a>
       </div>
     </div>
     <?php $idx++; endforeach; wp_reset_postdata(); ?>
@@ -155,34 +155,34 @@
         <div class="form-row">
           <div class="form-field">
             <label class="form-label" for="nome" data-i18n="form_nome">Nome</label>
-            <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome" required>
+            <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome" required data-i18n-ph="ph_nome">
             <span class="field-error" data-i18n="err_nome">Nome é obrigatório</span>
           </div>
           <div class="form-field">
             <label class="form-label" for="email" data-i18n="form_email">Email</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required>
+            <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required data-i18n-ph="ph_email">
             <span class="field-error" data-i18n="err_email">Email inválido</span>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
             <label class="form-label" for="whatsapp" data-i18n="form_whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" class="form-input phone-input" placeholder="(21) 99999-9999">
+            <input type="tel" id="whatsapp" name="whatsapp" class="form-input phone-input" placeholder="(21) 99999-9999" data-i18n-ph="ph_whatsapp">
             <span class="field-error">Telefone inválido</span>
           </div>
           <div class="form-field">
             <label class="form-label" for="empresa" data-i18n="form_empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nome da empresa">
+            <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nome da empresa" data-i18n-ph="ph_empresa">
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
             <label class="form-label" for="cargo" data-i18n="form_cargo">Cargo</label>
-            <input type="text" id="cargo" name="cargo" class="form-input" placeholder="Seu cargo">
+            <input type="text" id="cargo" name="cargo" class="form-input" placeholder="Seu cargo" data-i18n-ph="ph_cargo">
           </div>
           <div class="form-field">
             <label class="form-label" for="instagram" data-i18n="form_instagram">Instagram</label>
-            <input type="text" id="instagram" name="instagram" class="form-input" placeholder="@seudepartamento">
+            <input type="text" id="instagram" name="instagram" class="form-input" placeholder="@seudepartamento" data-i18n-ph="ph_instagram">
           </div>
         </div>
         <div class="form-row">
@@ -215,7 +215,7 @@
         </div>
         <div class="form-field">
           <label class="form-label" for="projeto" data-i18n="form_projeto">Descreva seu projeto</label>
-          <textarea id="projeto" name="projeto" class="form-textarea" placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+          <textarea id="projeto" name="projeto" class="form-textarea" placeholder="Conte um pouco sobre o que você precisa..." data-i18n-ph="ph_projeto"></textarea>
         </div>
         <button type="submit" class="btn btn-primary form-submit" data-i18n="form_submit">Enviar</button>
       </form>

@@ -30,8 +30,8 @@
     </a>
   </div>
   <div class="footer-bottom">
-    <span>&copy; <?php echo date('Y'); ?> Studio Cromo. Todos os direitos reservados.</span>
-    <span>Rio de Janeiro &mdash; Brasil</span>
+    <span data-i18n="footer_copy">&copy; <?php echo date('Y'); ?> Studio Cromo. Todos os direitos reservados.</span>
+    <span data-i18n="footer_local">Rio de Janeiro &mdash; Brasil</span>
   </div>
 </footer>
 

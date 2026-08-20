@@ -29,6 +29,14 @@
       form_categoria: 'Categoria', form_equipe: 'Equipe', form_projeto: 'Descreva seu projeto',
       form_submit: 'Enviar',
       err_nome: 'Nome é obrigatório', err_email: 'Email inválido',
+      about_name: 'Renan Blaute', about_role: 'Sócio e Diretor Criativo',
+      about_desc_role: 'Hotel & food photographer. Apaixonado por viagens e boas experiências.',
+      portfolio_btn: 'Ver Mais',
+      ph_nome: 'Seu nome', ph_email: 'seu@email.com', ph_whatsapp: '(21) 99999-9999',
+      ph_empresa: 'Nome da empresa', ph_cargo: 'Seu cargo', ph_instagram: '@seudepartamento',
+      ph_projeto: 'Conte um pouco sobre o que você precisa...',
+      footer_copy: '&copy; 2026 Studio Cromo. Todos os direitos reservados.',
+      footer_local: 'Rio de Janeiro \u2014 Brasil',
       footer_desc: 'Fotografia, vídeo e estratégia digital para hotelaria, gastronomia & lifestyle de luxo.',
       footer_nav: 'Navegação', footer_redes: 'Redes', footer_contato: 'Contato',
     },
@@ -56,6 +64,14 @@
       form_categoria: 'Category', form_equipe: 'Team', form_projeto: 'Describe your project',
       form_submit: 'Submit',
       err_nome: 'Name is required', err_email: 'Invalid email',
+      about_name: 'Renan Blaute', about_role: 'Partner & Creative Director',
+      about_desc_role: 'Hotel & food photographer. Passionate about travel and great experiences.',
+      portfolio_btn: 'View More',
+      ph_nome: 'Your name', ph_email: 'you@email.com', ph_whatsapp: '(21) 99999-9999',
+      ph_empresa: 'Company name', ph_cargo: 'Your role', ph_instagram: '@yourdepartment',
+      ph_projeto: 'Tell us a little about what you need...',
+      footer_copy: '&copy; 2026 Studio Cromo. All rights reserved.',
+      footer_local: 'Rio de Janeiro \u2014 Brazil',
       footer_desc: 'Photography, video and digital strategy for luxury hospitality, gastronomy & lifestyle.',
       footer_nav: 'Navigation', footer_redes: 'Social', footer_contato: 'Contact',
     },
@@ -83,6 +99,14 @@
       form_categoria: 'Categoría', form_equipe: 'Equipo', form_projeto: 'Describe tu proyecto',
       form_submit: 'Enviar',
       err_nome: 'El nombre es obligatorio', err_email: 'Email inválido',
+      about_name: 'Renan Blaute', about_role: 'Socio y Director Creativo',
+      about_desc_role: 'Fotógrafo de hoteles y gastronomía. Apasionado por los viajes y las buenas experiencias.',
+      portfolio_btn: 'Ver Más',
+      ph_nome: 'Tu nombre', ph_email: 'tu@email.com', ph_whatsapp: '(21) 99999-9999',
+      ph_empresa: 'Nombre de la empresa', ph_cargo: 'Tu cargo', ph_instagram: '@tudepartamento',
+      ph_projeto: 'Cuéntanos un poco sobre lo que necesitas...',
+      footer_copy: '&copy; 2026 Studio Cromo. Todos los derechos reservados.',
+      footer_local: 'Rio de Janeiro \u2014 Brasil',
       footer_desc: 'Fotografía, video y estrategia digital para hotelería, gastronomía y lifestyle de lujo.',
       footer_nav: 'Navegación', footer_redes: 'Redes', footer_contato: 'Contacto',
     }
@@ -99,6 +123,13 @@
       var key = el.getAttribute('data-i18n');
       if (dict[key]) {
         el.innerHTML = dict[key].replace(/\n/g, '<br>');
+      }
+    });
+    // Placeholders
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-ph');
+      if (dict[key]) {
+        el.placeholder = dict[key];
       }
     });
     // Update switcher labels

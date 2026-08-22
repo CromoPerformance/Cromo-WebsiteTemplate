@@ -39,7 +39,7 @@
       <div class="about-content">
         <span class="eyebrow" data-i18n="about_eyebrow"><?php echo esc_html(cromo_get('about_eyebrow', 'Quem somos')); ?></span>
         <h2 class="h2 about-title" data-i18n="about_title">
-          <?php echo nl2br(esc_html(cromo_get('about_title', "Cromo\nComunicação"))); ?>
+          <?php echo esc_html(cromo_get('about_title', 'Cromo Comunicação')); ?>
         </h2>
         <p class="about-subtitle" data-i18n="about_subtitle">
           <?php echo esc_html(cromo_get('about_subtitle', 'Comunicação visual estratégica para hotelaria, gastronomia & lifestyle de luxo.')); ?>
@@ -53,20 +53,20 @@
         <a href="#contato" class="btn btn-outline about-btn" data-i18n="about_btn">Conheça a Cromo</a>
       </div>
       <div class="about-image-wrapper">
-        <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.avif')); ?>"
+        <img src="<?php echo esc_url(cromo_img('about_image', 'RENAN-OIC.jpg')); ?>"
              alt="Studio Cromo" class="about-image" loading="lazy" decoding="async">
         <div class="about-image-info">
           <h3 class="about-image-name" data-i18n="about_name">Renan Blaute</h3>
           <p class="about-image-role" data-i18n="about_role">Sócio e Diretor Criativo</p>
           <p class="about-image-desc" data-i18n="about_desc_role">Hotel & food photographer. Apaixonado por viagens e boas experiências.</p>
-        </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 <section id="portfolio" class="portfolio-fullscreen">
-  <a href="<?php echo esc_url(home_url('/projetos')); ?>" class="portfolio-label">Projetos</a>
+  <a href="<?php echo esc_url(home_url('/projetos')); ?>" class="portfolio-label" data-i18n="nav_projetos">Projetos</a>
   <div class="portfolio-carousel" id="portfolioCarousel">
     <?php
     $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DESC']);
@@ -189,12 +189,12 @@
           <div class="form-field">
             <label class="form-label" for="categoria" data-i18n="form_categoria">Categoria</label>
             <div class="custom-select" data-name="categoria">
-              <button type="button" class="form-select custom-select-trigger"><span>Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
+              <button type="button" class="form-select custom-select-trigger"><span data-i18n="sel_selecione">Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
               <div class="custom-select-options">
-                <button type="button" class="custom-select-option" data-value="hotelaria">Hotelaria</button>
-                <button type="button" class="custom-select-option" data-value="gastronomia">Gastronomia</button>
-                <button type="button" class="custom-select-option" data-value="lifestyle">Lifestyle</button>
-                <button type="button" class="custom-select-option" data-value="outro">Outro</button>
+                <button type="button" class="custom-select-option" data-value="hotelaria" data-i18n="cat_hotelaria">Hotelaria</button>
+                <button type="button" class="custom-select-option" data-value="gastronomia" data-i18n="cat_gastronomia">Gastronomia</button>
+                <button type="button" class="custom-select-option" data-value="lifestyle" data-i18n="cat_lifestyle">Lifestyle</button>
+                <button type="button" class="custom-select-option" data-value="outro" data-i18n="cat_outro">Outro</button>
               </div>
               <select name="categoria" class="form-select-hidden" tabindex="-1"><option value="" disabled selected>Selecione</option><option value="hotelaria">Hotelaria</option><option value="gastronomia">Gastronomia</option><option value="lifestyle">Lifestyle</option><option value="outro">Outro</option></select>
             </div>
@@ -202,12 +202,12 @@
           <div class="form-field">
             <label class="form-label" for="equipe" data-i18n="form_equipe">Equipe</label>
             <div class="custom-select" data-name="equipe">
-              <button type="button" class="form-select custom-select-trigger"><span>Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
+              <button type="button" class="form-select custom-select-trigger"><span data-i18n="sel_selecione">Selecione</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"/></svg></button>
               <div class="custom-select-options">
-                <button type="button" class="custom-select-option" data-value="1-5">1 a 5 pessoas</button>
-                <button type="button" class="custom-select-option" data-value="5-15">5 a 15 pessoas</button>
-                <button type="button" class="custom-select-option" data-value="15-50">15 a 50 pessoas</button>
-                <button type="button" class="custom-select-option" data-value="50+">Mais de 50 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="1-5" data-i18n="eq_1a5">1 a 5 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="5-15" data-i18n="eq_5a15">5 a 15 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="15-50" data-i18n="eq_15a50">15 a 50 pessoas</button>
+                <button type="button" class="custom-select-option" data-value="50+" data-i18n="eq_50mais">Mais de 50 pessoas</button>
               </div>
               <select name="equipe" class="form-select-hidden" tabindex="-1"><option value="" disabled selected>Selecione</option><option value="1-5">1 a 5 pessoas</option><option value="5-15">5 a 15 pessoas</option><option value="15-50">15 a 50 pessoas</option><option value="50+">Mais de 50 pessoas</option></select>
             </div>

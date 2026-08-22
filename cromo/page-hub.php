@@ -26,7 +26,7 @@ $projetos = get_posts(['post_type' => 'projeto', 'posts_per_page' => -1, 'orderb
         $cat = get_post_meta($p->ID, '_cromo_cat', true);
         $loc = get_post_meta($p->ID, '_cromo_location', true);
         // Alternate grid patterns
-        $pattern = $idx % 5;
+        $pattern = $idx % 6;
       ?>
       <a href="<?php echo esc_url(get_permalink($p->ID)); ?>" class="hub-item hub-item-<?php echo $pattern; ?>" data-cat="<?php echo esc_attr($cat); ?>">
         <div class="hub-item-img">

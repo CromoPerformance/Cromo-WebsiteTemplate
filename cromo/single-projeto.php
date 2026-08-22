@@ -20,42 +20,26 @@
       }
     }
   }
-  $urls = array_values(array_filter($urls));
+  // Filter out non-image files (videos, etc.) and deduplicate
+  $urls = array_filter($urls, function($u) {
+    return preg_match('/\.(avif|jpg|jpeg|png|gif|webp)$/i', $u);
+  });
+  $urls = array_values(array_unique($urls));
 
-  // Fallback: read gallery from WP Gallery block in post content
-  if (empty($urls)) {
-    $content = get_the_content();
-    if (preg_match_all('/<figure[^>]*class="[^"]*wp-block-gallery[^"]*"[^>]*>(.*?)<\/figure>/s', $content, $gallery_matches)) {
-      foreach ($gallery_matches[1] as $gallery_html) {
-        if (preg_match_all('/<img[^>]+src=["\']([^"\']+)["\']/', $gallery_html, $img_matches)) {
-          foreach ($img_matches[1] as $url) {
-            $urls[] = $url;
-          }
-        }
-      }
-    }
-  }
-
-  // Build gallery rows: always grid, never single
-  $patterns = ['three-equal', 'two-wide-left', 'three-equal', 'two-wide-right'];
+  // Build gallery rows: cycle through 5, 3, 4 columns
+  $colPatterns = [3, 4];
   $gallery_rows = [];
   $i = 0;
   $patIdx = 0;
   $count = count($urls);
   while ($i < $count) {
-    $pattern = $patterns[$patIdx % count($patterns)];
-    if ($pattern === 'two-wide-left' || $pattern === 'two-wide-right') {
-      $imgs = [$urls[$i]];
-      if (isset($urls[$i + 1])) $imgs[] = $urls[$i + 1];
-      $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];
-      $i += count($imgs);
-    } elseif ($pattern === 'three-equal') {
-      $imgs = [$urls[$i]];
-      if (isset($urls[$i + 1])) $imgs[] = $urls[$i + 1];
-      if (isset($urls[$i + 2])) $imgs[] = $urls[$i + 2];
-      $gallery_rows[] = ['layout' => $pattern, 'images' => $imgs];
-      $i += count($imgs);
+    $cols = $colPatterns[$patIdx % count($colPatterns)];
+    $imgs = [];
+    for ($c = 0; $c < $cols && isset($urls[$i]); $c++) {
+      $imgs[] = $urls[$i];
+      $i++;
     }
+    $gallery_rows[] = ['cols' => $cols, 'images' => $imgs];
     $patIdx++;
   }
 ?>
@@ -84,10 +68,10 @@
 <?php if (!empty($gallery_rows)): ?>
 <div class="proj-gallery">
   <?php foreach ($gallery_rows as $row):
-    $layout = $row['layout'];
+    $cols = $row['cols'];
     $imgs = $row['images'];
   ?>
-  <div class="proj-row proj-row-<?php echo esc_attr($layout); ?>">
+  <div class="proj-row proj-row-<?php echo $cols; ?>col">
     <?php foreach ($imgs as $url): ?>
       <img src="<?php echo esc_url($url); ?>" alt="<?php the_title_attribute(); ?>">
     <?php endforeach; ?>

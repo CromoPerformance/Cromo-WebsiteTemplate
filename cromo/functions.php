@@ -151,13 +151,20 @@ add_action('add_meta_boxes', function () {
         });
         frame.open();
       }
-      // Sync hidden input before submit
-      document.querySelector('form').addEventListener('submit', function() {
+      function syncGalleryInput() {
         var thumbs = document.querySelectorAll('.gallery-thumb');
         var urls = [];
         thumbs.forEach(function(t) { if (t.dataset.url) urls.push(t.dataset.url); });
         document.getElementById('cromo-gallery-urls').value = urls.join('\n');
+      }
+      // Sync on remove
+      document.getElementById('cromo-gallery-wrap').addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-img')) {
+          setTimeout(syncGalleryInput, 10);
+        }
       });
+      // Sync before submit (fallback)
+      document.querySelector('form#post').addEventListener('submit', syncGalleryInput);
     </script>
     <?php
   }, 'projeto', 'normal', 'high');

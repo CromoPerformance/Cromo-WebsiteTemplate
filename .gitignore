@@ -3,6 +3,14 @@ Thumbs.db
 *.log
 .env
 *.zip
+
+# Tema WordPress (branch main) - video pesado nao versionado
 assets/videos/*.mov
 assets/videos/*.mp4
 assets/videos/*.webm
+
+# Site estatico (branch vercel) - so entram as midias otimizadas
+site/assets/videos/*.mov
+site/assets/videos/*.orig.*
+!site/assets/videos/hero.mp4
+!site/assets/videos/hero-poster.avif

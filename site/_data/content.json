@@ -1,0 +1,145 @@
+{
+    "generated": "2026-09-28 19:58 UTC",
+    "options": {
+        "about_eyebrow": "Quem somos",
+        "about_title": "Cromo Comunicação",
+        "about_desc1": "Somos uma agência de comunicação visual especializada em hotelaria, gastronomia e lifestyle de luxo. Combinamos fotografia, vídeo, assessoria de imprensa e marketing de performance para criar narrativas visuais que posicionam marcas premium no mercado.",
+        "about_desc2": "Com mais de 300 hotéis e restaurantes atendidos, desenvolvemos estratégias de conteúdo editorial que geram conexão, autoridade e resultado.",
+        "sol_eyebrow": "O que fazemos",
+        "sol_title": "Soluções integradas para potencializar sua marca",
+        "contact_eyebrow": "Contato",
+        "contact_title": "Vamos conversar?",
+        "contact_desc": "Conte-nos sobre seu projeto e descubra como podemos transformar sua comunicação visual.",
+        "footer_desc": "Fotografia, vídeo e estratégia digital para hotelaria, gastronomia & lifestyle de luxo.",
+        "about_subtitle": "Comunicação visual estratégica para hotelaria, gastronomia & lifestyle de luxo.",
+        "about_image": "images/RENAN-OIC.jpg",
+        "footer_logo": "images/black-basic.avif"
+    },
+    "projetos": [
+        {
+            "id": 16,
+            "title": "Mamma Gorda",
+            "slug": "mamma-gorda",
+            "date": "2026-08-19 17:30:00",
+            "hero": "images/2026/08/Copia-de-RBC04056-scaled.jpg",
+            "cat": "Campos do Jordão",
+            "location": "",
+            "year": "",
+            "next": 0,
+            "gallery": [
+                "images/2026/08/Copia-de-RBC03852-scaled.jpg",
+                "images/2026/08/Copia-de-RBC08970-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04173-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04168-scaled.jpg",
+                "images/2026/08/Copia-de-RBC03940-scaled.jpg",
+                "images/2026/08/Copia-de-RBC09359-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04287-scaled.jpg",
+                "images/2026/08/Copia-de-RBC03897-Editar-scaled.jpg"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Zendaya",
+            "slug": "zendaya",
+            "date": "2026-08-19 17:25:00",
+            "hero": "images/2026/07/Copia-de-Copia-de-CR_00392-scaled.avif",
+            "cat": "Armação dos Búzios",
+            "location": "",
+            "year": "2024",
+            "next": 0,
+            "gallery": [
+                "images/2026/07/Copia-de-Copia-de-CR_00001-Enhanced-NR-scaled.jpg",
+                "images/2026/07/Copia-de-IMG_9853-scaled.jpg",
+                "images/2026/07/Copia-de-RBC00037-HDR-scaled.jpg",
+                "images/2026/07/Copia-de-Copia-de-DJI_0139-Editar-scaled.jpg",
+                "images/2026/07/Copia-de-DSCF5723-scaled.jpg",
+                "images/2026/07/Copia-de-DSCF5755-scaled.jpg",
+                "images/2026/07/Copia-de-IMG_9856-scaled.jpg",
+                "images/2026/07/Copia-de-DSCF5464-scaled.jpg"
+            ]
+        },
+        {
+            "id": 26,
+            "title": "La Gare",
+            "slug": "la-gare",
+            "date": "2026-08-19 17:20:00",
+            "hero": "images/2026/08/Copia-de-Copia-de-Polvo-a-Velha-Aldeia-scaled.jpg",
+            "cat": "Armação dos Búzios",
+            "location": "",
+            "year": "",
+            "next": 0,
+            "gallery": [
+                "images/2026/08/Copia-de-Copia-de-RBC01369-HDR-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-RBC01573-Editar-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-RB105203-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-RB102990-HDR-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-RB102277-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-Polvo-a-Velha-Aldeia-e-Embarque-1-scaled.jpg",
+                "images/2026/08/Copia-de-Copia-de-RBC01762-Editar-1.jpg",
+                "images/2026/08/Copia-de-Copia-de-Spaghetti-Sinfonia-do-mar-1.jpg"
+            ]
+        },
+        {
+            "id": 24,
+            "title": "Kitchin",
+            "slug": "kitchin",
+            "date": "2026-08-19 17:15:00",
+            "hero": "images/2026/08/Copia-de-RBC02371-scaled.jpg",
+            "cat": "Rio de Janeiro",
+            "location": "",
+            "year": "",
+            "next": 0,
+            "gallery": [
+                "images/2026/08/Copia-de-RBC02374-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02415-2-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02338-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02326-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02307-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02236-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02229-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-RBC02334-Editar-scaled.jpg"
+            ]
+        },
+        {
+            "id": 28,
+            "title": "Abracadabra",
+            "slug": "abracadabra",
+            "date": "2026-08-19 17:10:00",
+            "hero": "images/2026/08/Copia-de-RBC04684-scaled.jpg",
+            "cat": "Armação dos Búzios",
+            "location": "",
+            "year": "",
+            "next": 0,
+            "gallery": [
+                "images/2026/08/Copia-de-RBC05148-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04594-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-DJI_0167-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04511-scaled.jpg",
+                "images/2026/08/Copia-de-RBC05111-HDR-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04615-scaled.jpg",
+                "images/2026/08/Copia-de-RBC04891-Editar-scaled.jpg"
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Esplanada",
+            "slug": "esplanada",
+            "date": "2026-08-19 17:05:00",
+            "hero": "images/2026/08/Copia-de-RBC01786-scaled.jpg",
+            "cat": "Rio de Janeiro",
+            "location": "",
+            "year": "",
+            "next": 0,
+            "gallery": [
+                "images/2026/08/Copia-de-RBC01285-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01376-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01415-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01435-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01791-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01897-Editar-scaled.jpg",
+                "images/2026/08/Copia-de-RBC01880-scaled.jpg",
+                "images/2026/08/Copia-de-RBC06540-scaled.jpg"
+            ]
+        }
+    ]
+}

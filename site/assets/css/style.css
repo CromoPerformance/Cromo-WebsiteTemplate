@@ -73,10 +73,7 @@
   --gray: #888888;
   --light-gray: #F5F5F5;
   --border: rgba(0,0,0,0.08);
-  /* A Dominic e exclusiva do titulo do hero (.hero-title).
-     Todo o resto do site usa a Typold, inclusive os headings. */
-  --font-display: 'Dominic', serif;
-  --font-heading: 'Typold', sans-serif;
+  --font-heading: 'Dominic', serif;
   --font-body: 'Typold', sans-serif;
 }
 
@@ -457,7 +454,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 700; line-height: 0.9; letter-spacing: normal;
   text-transform: uppercase; color: var(--white);
